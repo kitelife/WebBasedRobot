@@ -9,10 +9,6 @@ class mainHandler(tornado.web.RequestHandler):
 	
 	def post(self):
 		#print self.request.arguments
-		#if 'firstname' in self.request.arguments.keys():
-		#	print self.get_argument("firstname")
-		#if 'lastname' in self.request.arguments.keys():
-		#	print self.get_argument("lastname")
 		if 'cmd' in self.request.arguments.keys():
 			ctrserial.senddata(self.get_argument("cmd"))
 			print self.get_argument("cmd")
