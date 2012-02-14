@@ -1,6 +1,8 @@
 import tornado.ioloop
 import tornado.web
 
+import ctrserial
+
 class mainHandler(tornado.web.RequestHandler):
 	def get(self):
 		self.render("index.html", title="formpost")
@@ -12,8 +14,9 @@ class mainHandler(tornado.web.RequestHandler):
 		#if 'lastname' in self.request.arguments.keys():
 		#	print self.get_argument("lastname")
 		if 'cmd' in self.request.arguments.keys():
+			ctrserial.senddata(self.get_argument("cmd"))
 			print self.get_argument("cmd")
-		self.render("index.html", title="formpost")
+		self.render("index.html", title="console")
 
 application = tornado.web.Application([
 	(r"/", mainHandler),
