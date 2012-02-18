@@ -1,19 +1,27 @@
+<!DOCTYPE html>
 <html>
 	<head>
-	<script type="text/javascript">
-		function formSubmit()
-{
-	document.getElementById("myform").submit();
-}
-		</script>
+		<title>Web-based Robot Console</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<form id="myform" method="post">
-			<!-- Firstname: <input type="text" name="firstname" size="20"><br /> -->
-			<!-- Lastname: <input type="text" name="lastname" size="20"><br /> -->
-			Command: <input type="text" name="cmd" size="20"><br />
+		<form id="myform" action="/" method="post">
+			Command: <input type="text" name="cmd" size="20" /><br />
 			<br />
-			<input type="button" onclick="formSubmit()" value="Submit">
+			<input type="submit" value="Send" />
 		</form>
+		<script>
+			$("#myform").submit(function(event){
+					event.preventDefault();
+
+					var $form = $( this );
+						term = $form.find( 'input[name="cmd"]' ).val(),
+						url = $form.attr( 'action' );
+
+					$.post( url, { cmd: term },
+						function(){});
+				});
+		</script>
 	</body>
 </html>
