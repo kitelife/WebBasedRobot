@@ -3,7 +3,8 @@
 * 从两个层面上控制群体机器人：给所有机器人或者特定机器人发送命令或者烧录程序。<br />
 * 整个系统主要分为三个部分：客户端(浏览器)，服务器端，群体机器人。服务器端又分为两个部分：http服务器，串口(连接一个无线通信模块)操作。
 * 客户端，即前端页面利用jQuery Ajax实现与服务器端的异步通信。
-* 服务器端的http服务器基于Python Web服务器框架Tornado，串口操作基于pyserial函数库。<br />
+* 服务器端的http服务器基于Python Web服务器框架Tornado，串口操作基于pyserial函数库。
+
 ## 相关链接：
 * jQuery: [http://jquery.com/](http://jquery.com/)
 * Tornado: [http://www.tornadoweb.org/](http://www.tornadoweb.org/)
