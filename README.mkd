@@ -1,10 +1,10 @@
-* ±¾ÏîÄ¿µÄÄ¿±êÎªÍ¨¹ýä¯ÀÀÆ÷Ô¶³Ì¿ØÖÆÈºÌå»úÆ÷ÈËµÄÐÐÎª£¬·´À¡ÆäÏà¹ØµÄ×´Ì¬ÐÅÏ¢¡£<br />
-##¼ò½é
-* ´ÓÁ½¸ö²ãÃæÉÏ¿ØÖÆÈºÌå»úÆ÷ÈË£¬¸øËùÓÐ»úÆ÷ÈË»òÕßÌØ¶¨»úÆ÷ÈË·¢ËÍÃüÁî»òÕßÉÕÂ¼³ÌÐò¡£<br />
-* Õû¸öÏµÍ³Ö÷Òª·ÖÎªÈý¸ö²¿·Ö£º¿Í»§¶Ë(ä¯ÀÀÆ÷)£¬·þÎñÆ÷¶Ë£¬ÈºÌå»úÆ÷ÈË¡£·þÎñÆ÷¶ËÓÖ¿É·ÖÎªÁ½¸ö²¿·Ö£ºhttp·þÎñÆ÷£¬´®¿Ú²Ù×÷¡£
-* ¿Í»§¶Ë£¬¼´Ç°¶ËÒ³ÃæÀûÓÃjQuery AjaxÊµÏÖÓë·þÎñÆ÷¶ËµÄÒì²½Í¨ÐÅ£¬±£Ö¤ÈÎºÎÒ³ÃæÊÂ¼þ¶¼Ö»½øÐÐ¾Ö²¿Ë¢ÐÂ£¬²»»á·¢ÉúÒ³ÃæÌø×ª¡£
-* ·þÎñÆ÷¶ËµÄhttp·þÎñÆ÷»ùÓÚPython Web·þÎñÆ÷¿ò¼ÜTornado£¬´®¿Ú²Ù×÷²¿·Ö»ùÓÚpyserialº¯Êý¿â¡£
-## Ïà¹ØÁ´½Ó:
+## ç®€ä»‹ï¼š
+* æœ¬é¡¹ç›®çš„ç›®æ ‡ä¸ºé€šè¿‡æµè§ˆå™¨è¿œç¨‹æŽ§åˆ¶ç¾¤ä½“æœºå™¨äººçš„è¡Œä¸ºï¼Œå¹¶å‘ç”¨æˆ·åé¦ˆæœºå™¨äººçš„ç›¸å…³çŠ¶æ€ä¿¡æ¯ã€‚<br />
+* ä»Žä¸¤ä¸ªå±‚é¢ä¸ŠæŽ§åˆ¶ç¾¤ä½“æœºå™¨äººï¼šç»™æ‰€æœ‰æœºå™¨äººæˆ–è€…ç‰¹å®šæœºå™¨äººå‘é€å‘½ä»¤æˆ–è€…çƒ§å½•ç¨‹åºã€‚<br />
+* æ•´ä¸ªç³»ç»Ÿä¸»è¦åˆ†ä¸ºä¸‰ä¸ªéƒ¨åˆ†ï¼šå®¢æˆ·ç«¯(æµè§ˆå™¨)ï¼ŒæœåŠ¡å™¨ç«¯ï¼Œç¾¤ä½“æœºå™¨äººã€‚æœåŠ¡å™¨ç«¯åˆåˆ†ä¸ºä¸¤ä¸ªéƒ¨åˆ†ï¼šhttpæœåŠ¡å™¨ï¼Œä¸²å£(è¿žæŽ¥ä¸€ä¸ªæ— çº¿é€šä¿¡æ¨¡å—)æ“ä½œã€‚
+* å®¢æˆ·ç«¯ï¼Œå³å‰ç«¯é¡µé¢åˆ©ç”¨jQuery Ajaxå®žçŽ°ä¸ŽæœåŠ¡å™¨ç«¯çš„å¼‚æ­¥é€šä¿¡ã€‚
+* æœåŠ¡å™¨ç«¯çš„httpæœåŠ¡å™¨åŸºäºŽPython WebæœåŠ¡å™¨æ¡†æž¶Tornadoï¼Œä¸²å£æ“ä½œåŸºäºŽpyserialå‡½æ•°åº“ã€‚<br />
+## ç›¸å…³é“¾æŽ¥ï¼š
 * jQuery: [http://jquery.com/](http://jquery.com/)
 * Tornado: [http://www.tornadoweb.org/](http://www.tornadoweb.org/)
 * pyserial: [http://pyserial.sourceforge.net/](http://pyserial.sourceforge.net/)
