@@ -1,3 +1,0 @@
-ID: R2
-State: LED
-Power: 50%

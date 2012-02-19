@@ -1,27 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 	<head>
-		<title>Web-based Robot Console</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+			h1 {color:#004080; font-size:40px;}
+			body{
+				width:960px;
+				margin:10px auto;
+				font-family: Arial, "MS Trebuchet", san-serif;
+				background-color: #C0C0CA;
+			}
+
+			li{
+				line-height:30px;
+			}
+			div#header{
+				width:100%;
+				text-align: center;
+			}
+
+			div#footer ul, div#formforsend ul, div#allrobots ul{
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			div#footer ul li, div#formforsend ul li, div#allrobots ul li{
+				padding: 0;
+				margin: 0 20px 0 0;
+				display: inline;
+			}
+
+			div#footer, div#formforsend, div#allrobots{
+				clear: both;
+				width: 100%;
+				display: block;
+				text-align: center;
+			}
+			input#cmd2robot, input#file2robot{
+				width:200px;
+				height:25px
+			}
+			input#formforsendsubmit, input#uploadsubmit{
+				width:50px;
+				height:30px;
+			}
+			select{
+				width:45px;
+				height:30px;
+			}
+		</style>
 		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' type="text/javascript" charset="utf-8"></script>
+		<script src='http://malsup.github.com/jquery.form.js' type="text/javascript" charset="utf-8"></script>
+		<title>基于Web的群体机器人远程控制台</title>
 	</head>
+	
 	<body>
-		<form id="myform" action="/" method="post">
-			Command: <input type="text" name="cmd" size="20" /><br />
-			<br />
-			<input type="submit" value="Send" />
+	<div id="header">
+	<h1>基于Web的群体机器人远程控制台</h1>
+	</div>
+	<br /><br /><br /><br />
+	<div id="formforsend">
+		<ul>
+		<li>
+		<form id="sendcmd" action="#" method="post">
+			<input id="cmd2robot" type="text" name="command" size=30>
+			&nbsp;&nbsp;
+			<select name="towho">
+				<option value="all">All</option>
+			</select>
+			&nbsp;&nbsp;&nbsp;
+			<input id="formforsendsubmit" type="submit" value="发送" />
 		</form>
-		<script>
-			$("#myform").submit(function(event){
-					event.preventDefault();
-
-					var $form = $( this );
-						term = $form.find( 'input[name="cmd"]' ).val(),
-						url = $form.attr( 'action' );
-
-					$.post( url, { cmd: term },
-						function(){});
+		</li>
+		<li>
+			<form id="uploadform" enctype="multipart/form-data" action="#" method="post">
+				<input id="file2robot" type="file" name="postfile">
+				&nbsp;&nbsp;
+				<select name="writewho">
+					<option value="all">All</option>
+				</select>
+				&nbsp;&nbsp;&nbsp;
+				<input id="uploadsubmit" type="submit" value="烧录" />
+			</form>
+			<div id="submitinfo"></div>
+		</li>
+	</div>
+	<div id="allrobots">
+		<ul>
+		</ul>
+	</div>
+	<div id="onerobot">
+		<ul>
+		</ul>
+	</div>
+	
+	<script>
+		$("#sendcmd").submit(function(event){
+			event.preventDefault();
+			var $form = $( this );
+				cmd = $form.find( 'input[name="command"]' ).val(),
+				who = $form.find( 'select[name="towho"]' ).val(),
+				url = $form.attr( 'action' );
+			$.post( url, { command: cmd, towho: who}, function(data){
+					$("div#allrobots>ul").empty();
+					$("form#sendcmd>select").empty().append("<option value='All'>All</option>");
+					$("form#uploadform>select").empty().append("<option value='All'>All</option>");
+					$(data).find('robot').each(function(){
+					var $robot = $(this);
+					var id = $robot.find('id').text();
+					$("div#allrobots>ul").append("<li id='"+id+"'>"+id+"</id>");
+					$("form#sendcmd>select").append("<option value='"+id+"'>"+id+"</option>");
+					$("form#uploadform>select").append("<option value='"+id+"'>"+id+"</option>");
 				});
+			});
+		}); 
+		$("div#allrobots>ul>li").live('click',function(event){
+			//alert($(this)[0].innerText);
+			$.post( "#", { id: $(this)[0].innerText}, function(data){
+				var id = $(data).find('id').text();
+				var state = $(data).find('state').text();
+				var power = $(data).find('power').text();
+				$("div#onerobot>ul").empty().append("<li>ID:&nbsp;&nbsp;"+id+"</li><li>State:&nbsp;&nbsp;"+state+"</li><li>Power:&nbsp;&nbsp;"+power+"</li>");
+			});
+		});
+		$("#uploadform").ajaxForm({
+			beforeSubmit: function(){
+				$("#submitinfo").html("Submitting...");
+			},
+			success: function(){
+				$("#submitinfo").html("Submitted!");
+			}
+		});
 		</script>
+	<br /><br />
+	<br /><br />
+	<br /><br />
+	<br /><br />
+	<div id="footer">
+		<p>&copy; 2012 SI, Embedded Lab</p>
+		<nav>
+		<ul>
+			<li><a href="http://202.120.40.124">实验室</a></li>
+			<li><a href="about.html">关于</a></li>
+		</ul>
+		</nav>
+	</div>
 	</body>
 </html>

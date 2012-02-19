@@ -1,3 +1,0 @@
-ID: R1
-state: Running
-Power: 30%
