@@ -21,12 +21,12 @@ class mainHandler(tornado.web.RequestHandler):
 			if self.get_argument("command") == 'query':
 				print self.get_argument("command"), self.get_argument("towho")
 				#ctrserial.senddata(self.get_argument("command"))
-				fileHandler = open('robotlist.xml', 'r')
+				fileHandler = open('test/robotlist.xml', 'r')
 				self.write(fileHandler.read())
 				fileHandler.close()
 		elif 'id' in self.request.arguments.keys():
 			print self.request.arguments.get('id')[0]
-			fileHandler = open(self.request.arguments.get('id')[0]+'.xml', 'r')
+			fileHandler = open('test/'+self.request.arguments.get('id')[0]+'.xml', 'r')
 			self.write(fileHandler.read())
 			fileHandler.close()
 
