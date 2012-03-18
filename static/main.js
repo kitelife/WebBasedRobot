@@ -21,7 +21,7 @@ $("#sendcmd").submit(function(event){
 
 $("div#allrobots>ul>li").live('click',function(event){
 	//alert($(this)[0].innerText);
-	$.post( "#", { id: $(this)[0].innerText}, function(data){
+	$.post( "/", { id: $(this)[0].innerText}, function(data){
 		var id = $(data).find('id').text();
 		var state = $(data).find('state').text();
 		var power = $(data).find('power').text();
