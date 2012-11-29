@@ -1,69 +1,70 @@
 <!DOCTYPE html>
 <html lang="en-US">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link type="text/css" rel="stylesheet" href="/static/main.css" />
-		<script type="text/javascript" src='/static/jquery.js' charset="utf-8"></script>
-		<script type="text/javascript" src='/static/jquery.form.js' charset="utf-8"></script>
-		<script type="text/javascript" src='/static/main.js' charset="utf-8"></script>
-		<title>基于Web的群体机器人远程控制台</title>
-	</head>
-	
-	<body>
-	<div id="header">
-	<h1>基于Web的群体机器人远程控制台</h1>
-	</div>
-	<br /><br /><br /><br />
-	<div id="formforsend">
-		<ul>
-		<li>
-		<form id="sendcmd" action="/sendcmd" method="post">
-			<input id="cmd2robot" type="text" name="command" size=30>
-			&nbsp;&nbsp;
-			<select name="towho">
-				<option value="all">All</option>
-			</select>
-			&nbsp;&nbsp;&nbsp;
-			<input id="formforsendsubmit" type="submit" value="发送" />
-		</form>
-		</li>
-		<li>
-			<form id="uploadform" enctype="multipart/form-data" action="/uploadfile" method="post">
-				<input id="file2robot" type="file" name="postfile">
-				&nbsp;&nbsp;
-				<select name="writewho">
-					<option value="all">All</option>
-				</select>
-				&nbsp;&nbsp;&nbsp;
-				<input id="uploadsubmit" type="submit" value="烧录" />
-			</form>
-			<div id="submitinfo"></div>
-		</li>
-	</div>
-	<div id="allrobots">
-		<ul>
-		</ul>
-	</div>
-	<div id="onerobot">
-		<ul>
-		</ul>
-	</div>
-<!-- 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link type="text/css" rel="stylesheet" href="/static/main.css" />
+        <script type="text/javascript" src='/static/jquery.js' charset="utf-8"></script>
+        <script type="text/javascript" src='/static/jquery.form.js' charset="utf-8"></script>
+        <script type="text/javascript" src='/static/main.js' charset="utf-8"></script>
+        <title>基于Web的群体机器人远程控制台</title>
+    </head>
+
+    <body>
+        <div id="header">
+            <h1>基于Web的群体机器人远程控制台</h1>
+        </div>
+        <br /><br /><br /><br />
+        <div id="formforsend">
+            <ul>
+            <li>
+                <form id="sendcmd" action="/sendcmd" method="post">
+                    <input id="cmd2robot" type="text" name="command" size=30>
+                    &nbsp;&nbsp;
+                    <select name="towho">
+                        <option value="all">All</option>
+                    </select>
+                    &nbsp;&nbsp;&nbsp;
+                    <input id="formforsendsubmit" type="submit" value="发送" />
+                </form>
+            </li>
+            <li>
+                <form id="uploadform" enctype="multipart/form-data" action="/uploadfile" method="post">
+                    <input id="file2robot" type="file" name="postfile">
+                    &nbsp;&nbsp;
+                    <select name="writewho">
+                        <option value="all">All</option>
+                    </select>
+                    &nbsp;&nbsp;&nbsp;
+                    <input id="uploadsubmit" type="submit" value="烧录" />
+                </form>
+                <div id="submitinfo"></div>
+            </li>
+            </ul>
+        </div>
+        <div id="allrobots">
+            <ul>
+            </ul>
+        </div>
+        <div id="onerobot">
+            <ul>
+            </ul>
+        </div>
+<!--
 <script>
 </script>
 -->
-	<br /><br />
-	<br /><br />
-	<br /><br />
-	<br /><br />
-	<div id="footer">
-		<p>&copy; 2012 SI, Embedded Lab</p>
-		<nav>
-		<ul>
-			<li><a href="http://202.120.40.124">实验室</a></li>
-			<li><a href="about.html">关于</a></li>
-		</ul>
-		</nav>
-	</div>
-	</body>
+    <br /><br />
+    <br /><br />
+    <br /><br />
+    <br /><br />
+    <div id="footer">
+        <p>&copy; 2012 SI, Embedded Lab</p>
+        <nav>
+        <ul>
+            <li><a href="http://202.120.40.124">实验室</a></li>
+            <li><a href="about.html">关于</a></li>
+        </ul>
+        </nav>
+    </div>
+    </body>
 </html>
