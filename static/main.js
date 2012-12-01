@@ -9,6 +9,8 @@ $("#sendcmd").submit(function(event){
 		$("div#allrobots>ul").empty();
 		$("form#sendcmd>select").empty().append("<option value='All'>All</option>");
 		$("form#uploadform>select").empty().append("<option value='All'>All</option>");
+		$("div#allrobots>ul").append("<li>" + data + "</li>");
+		/*
 		$(data).find('robot').each(function(){
 			var $robot = $(this);
 			var id = $robot.find('id').text();
@@ -16,6 +18,7 @@ $("#sendcmd").submit(function(event){
 			$("form#sendcmd>select").append("<option value='"+id+"'>"+id+"</option>");
 			$("form#uploadform>select").append("<option value='"+id+"'>"+id+"</option>");
 		});
+		*/
 	});
 }); 
 

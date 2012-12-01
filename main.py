@@ -4,7 +4,7 @@ import os
 import tornado.ioloop
 import tornado.web
 
-#import ctrserial
+import operate_serial
 import operate_file
 
 
@@ -12,7 +12,7 @@ class mainHandler(tornado.web.RequestHandler):
 
     def get(self):
         self.render("index.html", title="console")
-
+    '''
     def post(self):
         if 'id' in self.request.arguments.keys():
             print self.request.arguments.get('id')[0]
@@ -20,17 +20,16 @@ class mainHandler(tornado.web.RequestHandler):
             '.xml', 'r')
             self.write(fileHandler.read())
             fileHandler.close()
-
+    '''
 
 class parseCmd(tornado.web.RequestHandler):
 
     def post(self):
-        if self.get_argument("command") == 'query':
-            print self.get_argument("command"), self.get_argument("towho")
-            #ctrserial.senddata(self.get_argument("command"))
-            fileHandler = open('test/robotlist.xml', 'r')
-            self.write(fileHandler.read())
-            fileHandler.close()
+        cmd = self.get_argument("command").strip().lower()
+        target = self.get_argument("towho").strip().lower()
+        print cmd, target
+        status = operate_serial.send_cmd(cmd, target)
+        self.write(status)
 
 
 class processFile(tornado.web.RequestHandler):
