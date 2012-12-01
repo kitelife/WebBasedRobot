@@ -2,23 +2,28 @@
 import serial
 
 CMD_CODE = {
-    'info': 0x01,
-    'run': 0x02,
-    'forward': 0x03,
-    'backward': 0x04,
-    'turnLeft': 0x05,
-    'turnRight': 0x06,
-    'stop': 0x07,
+    'info': '1',
+    'run': '2',
+    'forward': '3',
+    'backward': '4',
+    'turnLeft': '5',
+    'turnRight': '6',
+    'stop': '7',
 }
 
-CAR_CODE = {
-    1: 0x01,
-    2: 0x02,
-    3: 0x03,
-    4: 0x04,
-    5: 0x05,
-    6: 0x06
-}
+
+def scan():
+    '''scan for available ports. return a list of tuples (num, name)'''
+    available = []
+    for i in range(256):
+        try:
+            s = serial.Serial(i)
+            available.append((i, s.portstr))
+            s.close()
+        except serial.SerialException:
+            pass
+    return available
+
 
 class user_serial(object):
     
@@ -37,22 +42,41 @@ class user_serial(object):
 def send_cmd(cmd, target):
 
     result_value = 'OK'
+    
+    data_list = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 
+                    '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
 
     cmd_list = cmd.split(' ')
 
     if len(cmd_list) and (cmd_list[0] in CMD_CODE.keys()):
         cmd_code = CMD_CODE[cmd_list[0]]
+        if len(cmd_code) == 1:
+            data_list[2] = cmd_code
+        elif len(cmd_code) == 2:
+            data_list[1] = cmd_code[0]
+            data_list[2] = cmd_code[1]
+
+    if len(cmd_list) == 2:
+        cmd_arg = cmd_list[1].strip()
+        if len(cmd_arg) == 1:
+            data_list[3] = cmd_arg
+        elif len(cmd_arg) == 2:
+            data_list[3] = cmd_arg[0]
+            data_list[4] = cmd_arg[1]
+
     if target == 'all':
-        target_code = 0xff
-    elif target in CAR_CODE.keys():
-        target_code = CAR_CODE[target]
-    print target_code, cmd_code
-    data = (target_code << 24) | (cmd_code << 16)
-    print 'target_code: %x, cmd_code: %x' %(target_code, cmd_code)
-    print '%x' % data
+        target_code = 'x'
+    else:
+        target_code = target
+    data_list[0] = target_code
+
+    data_str = ('').join(data_list)
+    print '%s' % data_str
     try:
         serial_handler = user_serial()
-        serial_handler.send_data(data)
+        #serial_port = scan()[0][0]
+        #serial_handler.ser.setPort(serial_port)
+        serial_handler.send_data(data_str)
     except Exception, e:
         result_value = e.message
 
@@ -60,12 +84,17 @@ def send_cmd(cmd, target):
 
 
 if __name__ == '__main__':
-    message = 'left'
-    num = 5
-    while num > 0:
-        senddata(message)
-        num = num - 1
-        sleeptimes = 10000
-        while sleeptimes > 0:
-            print sleeptimes
-            sleeptimes -= 5
+    import time
+    send_cmd('info', 'all')
+    time.sleep(1)
+    send_cmd('run', '1')
+    time.sleep(2)
+    send_cmd('backward', '1')
+    time.sleep(2)
+    send_cmd('forward', '1')
+    time.sleep(2)
+    send_cmd('turnLeft', '1')
+    time.sleep(2)
+    send_cmd('turnRight', '1')
+    time.sleep(2)
+    send_cmd('stop', '1')
