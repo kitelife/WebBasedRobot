@@ -1,0 +1,104 @@
+div {
+	display: block;
+}
+/*
+body{
+	background-color: #030303;
+	color: white;
+}
+*/
+#title {
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+#footer {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.relativelinks {
+	margin-top: 10px;
+	font-size: 15px;
+	text-decoration: none;
+	color: white;
+}
+
+.ui-box {
+	margin: 14px 0;
+	background:white;
+	border: 1px solid #ccc;
+	border-top-color: #DADADA;
+	border-radius: 4px;
+	box-shadow: 1px 1px 10px #BCBCBC;
+	color: #464646;
+}
+
+.ui-box-header{
+	position:relative;
+	padding:0px 10px;
+	border-bottom:1px solid #dadada;
+	border-radius:3px 3px 0 0;
+	font:14px/1.6 "Helvetica",arial,sans-serif;
+}
+.ui-box-container{
+	padding:8px 10px;
+	line-height:1.6;
+}
+
+a {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.line {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+button {
+	margin-left: 60px;
+	margin-right: 60px;
+}
+
+.piliangcmd {
+	text-align: center;
+}
+
+#cmddetails{
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+#cmd, #targetnum, #distance{
+	/*display: none;*/
+	margin-bottom: 0px;
+} 
+
+.hidden{
+	display: none;
+}
+
+#senddetailcmd{
+	margin-left: 10px;
+}
+
+#detailctr{
+	text-align: center;
+}
+
+#commitpiliangcmd {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#selecttarget {
+	margin-top: 10px;
+}
+
+#buttons-status, #inputtexts-status, #textarea-status{
+	text-align: center;
+	color: red;
+}

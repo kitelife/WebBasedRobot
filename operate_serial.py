@@ -6,9 +6,10 @@ CMD_CODE = {
     'run': '2',
     'forward': '3',
     'backward': '4',
-    'turnLeft': '5',
-    'turnRight': '6',
+    'turnleft': '5',
+    'turnright': '6',
     'stop': '7',
+    'count': '9'
 }
 
 
@@ -41,7 +42,7 @@ class user_serial(object):
 
 def send_cmd(cmd, target):
 
-    result_value = 'OK'
+    result_value = 'true'
     
     data_list = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 
                     '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
