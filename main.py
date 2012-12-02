@@ -39,6 +39,8 @@ class handle_multi_cmds(tornado.web.RequestHandler):
         multi_cmds = self.get_argument("multicmds").strip().lower()
         cmd_list = multi_cmds.split(";")
         for index, cmd in enumerate(cmd_list):
+
+            target = None
             cmd = cmd.strip("\n")
             cmd_parts = re.split(r'\s+', cmd)
             cmd = cmd_parts[0]
@@ -78,9 +80,12 @@ class handle_multi_cmds(tornado.web.RequestHandler):
                     self.write(syntax_err_msg % (str(index+1), ));
             
             if true_code:
-                print cmd, target
-                status = operate_serial.send_cmd(cmd, target)
-                self.write(status + "<br />")
+                if cmd and target:
+                    print cmd, target
+                    status = operate_serial.send_cmd(cmd, target)
+                    self.write(status + "<br />")
+                else:
+                    self.write("指令格式不对<br />")
             else:
                 return
 

@@ -25,7 +25,7 @@ def scan():
             pass
     return available
 
-
+'''
 class user_serial(object):
     
     def __init__(self, baudrate=9600, port=1):
@@ -38,7 +38,7 @@ class user_serial(object):
 
     def close(self):
         self.ser.close()
-
+'''
 
 def send_cmd(cmd, target):
 
@@ -74,10 +74,22 @@ def send_cmd(cmd, target):
     data_str = ('').join(data_list)
     print '%s' % data_str
     try:
-        serial_handler = user_serial()
-        #serial_port = scan()[0][0]
-        #serial_handler.ser.setPort(serial_port)
-        serial_handler.send_data(data_str)
+        serial_handler = serial.Serial(0,
+                                        baudrate=345600,
+                                        bytesize=serial.EIGHTBITS,
+                                        parity=serial.PARITY_NONE,
+                                        stopbits=serial.STOPBITS_ONE,
+                                        timeout=3,
+                                        xonxoff=0,
+                                        rtscts=0
+                                        )
+        serial_handler.setRTS(1)
+        serial_handler.setDTR(1)
+        serial_handler.flushInput()
+        serial_handler.flushOutput()
+        serial_handler.write(data_str)
+        if cmd_list[0] == "info":
+            result_value = serial_handler.read(32)
     except Exception, e:
         result_value = e.message
 
@@ -85,6 +97,7 @@ def send_cmd(cmd, target):
 
 
 if __name__ == '__main__':
+
     import time
     send_cmd('info', 'all')
     time.sleep(1)

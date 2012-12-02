@@ -77,7 +77,7 @@ $(function(){
 			}
 
 		}
-		else if(id == "commitpiliangcmd")
+		else if(id === "commitpiliangcmd")
 		{
 			var ele = $(this);
 			$(this).attr("disabled", "disabled");
@@ -98,29 +98,4 @@ $(function(){
 		}
 
 	});
-/*
-	$("#sendcmd").submit(function(event){
-		event.preventDefault();
-	var $form = $( this );
-	cmd = $form.find( 'input[name="command"]' ).val(),
-	who = $form.find( 'select[name="towho"]' ).val(),
-	url = $form.attr( 'action' );
-	$.post( url, { command: cmd, towho: who}, function(data){
-		$("div#allrobots>ul").empty();
-		$("form#sendcmd>select").empty().append("<option value='All'>All</option>");
-		$("form#uploadform>select").empty().append("<option value='All'>All</option>");
-		$("div#allrobots>ul").append("<li>" + data + "</li>");
-	});
-}); 
-
-$("div#allrobots>ul>li").live('click',function(event){
-	//alert($(this)[0].innerText);
-	$.post( "/", { id: $(this)[0].innerText}, function(data){
-		var id = $(data).find('id').text();
-		var state = $(data).find('state').text();
-		var power = $(data).find('power').text();
-		$("div#onerobot>ul").empty().append("<li>ID:&nbsp;&nbsp;"+id+"</li><li>State:&nbsp;&nbsp;"+state+"</li><li>Power:&nbsp;&nbsp;"+power+"</li>");
-	});
-});
-*/
 })
