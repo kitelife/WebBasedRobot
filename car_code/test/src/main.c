@@ -29,6 +29,9 @@ unsigned long distence = 0;
 unsigned char TestNum=0;
 unsigned char receive[32];
 
+unsigned long banlance_l = 560;//左
+unsigned long banlance_r = 500;//右
+
 // 条件变量定义
 unsigned char car_num = '1';
 unsigned char info_cmd = '1';
@@ -124,6 +127,52 @@ int main(void)
             // 1, 2位为电量的值
             response[1] = y.a[0];
             response[2] = y.a[1];
+            
+            // 3,7位为+或-，表示向前或向后(正速度，负速度)
+            // 4,5,6位为左马达的速度
+            // 8,9,10位为右马达的速度
+            long leftMotor_L0;
+            long leftMotor_L1;
+            long rightMotor_L0;
+            long rightMotor_L1;
+            leftMotor_L0 = GPIOPinRead(GPIO_PORTG_BASE, MOTOR_L0); 
+            leftMotor_L1 = GPIOPinRead(GPIO_PORTG_BASE, MOTOR_L1); 
+            rightMotor_L0 = GPIOPinRead(GPIO_PORTD_BASE, MOTOR_L0); 
+            rightMotor_L1 = GPIOPinRead(GPIO_PORTD_BASE, MOTOR_L1); 
+            
+            if (leftMotor_L0 !=0 && leftMotor_L1 == 0 && rightMotor_L0 != 0 && rightMotor_L1 == 0)//前进
+            {                                            
+              response[3] = '+';//left motor speed
+              response[4] = 48+banlance_l/100;//left motor speed
+              response[5] = 48+(banlance_l%100)/10;//left motor speed
+              response[6] = 48+banlance_l%10;//left motor speed                             
+              response[7] = '+';//right motor speed
+              response[8] = 48+banlance_r/100;//right motor speed
+              response[9] = 48+(banlance_r%100)/10;//right motor speed
+              response[10] = 48+banlance_r%10;//right motor speed	
+            }
+            else if (leftMotor_L0 ==0 && leftMotor_L1 != 0 && rightMotor_L0 == 0 && rightMotor_L1 != 0)//后退
+            {                                       
+              response[3] = '-';//left motor speed
+              response[4] = 48+banlance_l/100;//left motor speed
+              response[5] = 48+(banlance_l%100)/10;//left motor speed
+              response[6] = 48+banlance_l%10;//left motor speed                             
+              response[7] = '-';//right motor speed
+              response[8] = 48+banlance_r/100;//right motor speed
+              response[9] = 48+(banlance_r%100)/10;//right motor speed
+              response[10] = 48+banlance_r%10;//right motor speed	
+            }	
+            else if (leftMotor_L0 !=0 && leftMotor_L1 != 0 && rightMotor_L0 != 0 && rightMotor_L1 != 0)//停止
+            {                                       
+              response[3] = '+';//left motor speed
+              response[4] = '0';//left motor speed
+              response[5] = '0';//left motor speed
+              response[6] = '0';//left motor speed                             
+              response[7] = '+';//right motor speed
+              response[8] = '0';//right motor speed
+              response[9] = '0';//right motor speed
+              response[10] = '0';//right motor speed	
+            }
             NRF24L01_TxPacket(SSI1_BASE,response);
             delay_ms(8);
           }

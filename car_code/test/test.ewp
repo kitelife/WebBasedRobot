@@ -1795,7 +1795,7 @@
   <group>
     <name>lib</name>
     <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\..\StellarisWare\driverlib\ewarm\Exe\driverlib.a</name>
+      <name>C:\StellarisWare\driverlib\ewarm\Exe\driverlib.a</name>
     </file>
   </group>
   <group>

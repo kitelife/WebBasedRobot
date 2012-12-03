@@ -97,7 +97,10 @@ def send_cmd(cmd, target):
         if cmd_list[0] == "info":
             response = serial_handler.read(32)
             print response
-            result_value = response[0] + "号小车 --- " + "电量：" + response[1] + ", " + response[2]
+            result_value = response[0] + "号小车 --- " + "电量：" + response[1] + "." + response[2] + "(伏)；"
+            result_value += "左电机: " + response[3] + response[4] + response[5] + response[6] + "，"
+            result_value += "右电机：" + response[7] + response[8] + response[9] + response[10]
+
             print result_value
     except Exception, e:
         result_value = e.message
