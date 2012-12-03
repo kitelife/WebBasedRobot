@@ -41,7 +41,10 @@ class user_serial(object):
 '''
 
 def send_cmd(cmd, target):
-
+    '''
+    cmd: 包含两个部分---指令本身以及其参数，以空格分隔
+    target: 小车的编号
+    '''
     result_value = 'true'
     
     data_list = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 
@@ -51,6 +54,7 @@ def send_cmd(cmd, target):
 
     if len(cmd_list) and (cmd_list[0] in CMD_CODE.keys()):
         cmd_code = CMD_CODE[cmd_list[0]]
+        '''指令编码使用1,2两个字节存储，1字节存编码的十位，2字节存编码的个位'''
         if len(cmd_code) == 1:
             data_list[2] = cmd_code
         elif len(cmd_code) == 2:
@@ -59,22 +63,24 @@ def send_cmd(cmd, target):
 
     if len(cmd_list) == 2:
         cmd_arg = cmd_list[1].strip()
+        '''指令参数编码使用3，4两个字节存储，3字节存储编码的十位，4字节存编码的个位'''
         if len(cmd_arg) == 1:
-            data_list[3] = cmd_arg
+            data_list[4] = cmd_arg
         elif len(cmd_arg) == 2:
             data_list[3] = cmd_arg[0]
             data_list[4] = cmd_arg[1]
-
+    '''使用"x"来指代所有小车'''
     if target == 'all':
         target_code = 'x'
     else:
         target_code = target
+    '''32字节数据的0字节存储小车编号'''
     data_list[0] = target_code
 
     data_str = ('').join(data_list)
     print '%s' % data_str
     try:
-        serial_handler = serial.Serial(0,
+        serial_handler = serial.Serial(2,
                                         baudrate=345600,
                                         bytesize=serial.EIGHTBITS,
                                         parity=serial.PARITY_NONE,
