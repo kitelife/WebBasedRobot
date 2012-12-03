@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>random/Debug</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>148</Column0><Column1>4</Column1><Column2>27</Column2><Column3>0</Column3></ColumnWidths>
+      </Workspace>
+    <Build><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>915</ColumnWidth1><ColumnWidth2>244</ColumnWidth2><ColumnWidth3>61</ColumnWidth3></Build><TerminalIO/><Debug-Log><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1221</ColumnWidth1></Debug-Log></Static>
+    <Windows>
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-25487-14292</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>random</ExpandedNode><ExpandedNode>random/lib</ExpandedNode><ExpandedNode>random/src</ExpandedNode><ExpandedNode>random/startup</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3><Tabs><Tab><Identity>TabID-31950-20516</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab><Tab><Identity>TabID-15268-22448</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\random\src\main.c</Filename><XPos>0</XPos><YPos>106</YPos><SelStart>2686</SelStart><SelEnd>2686</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\Program Files\IAR Systems\Embedded Workbench 6.0 Evaluation\StellarisWare\driverlib\adc.h</Filename><XPos>0</XPos><YPos>168</YPos><SelStart>9938</SelStart><SelEnd>9938</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\Program Files\IAR Systems\Embedded Workbench 6.0 Evaluation\StellarisWare\inc\hw_gpio.h</Filename><XPos>0</XPos><YPos>327</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\Program Files\IAR Systems\Embedded Workbench 6.0 Evaluation\StellarisWare\driverlib\gpio.h</Filename><XPos>0</XPos><YPos>36</YPos><SelStart>1979</SelStart><SelEnd>1989</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\random\src\infrared.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>42</SelStart><SelEnd>42</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\random\src\baselib.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>359</SelStart><SelEnd>359</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\Program Files\IAR Systems\Embedded Workbench 6.0 Evaluation\StellarisWare\inc\hw_types.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>1177</SelStart><SelEnd>1177</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\random\src\scan.c</Filename><XPos>0</XPos><YPos>22</YPos><SelStart>1128</SelStart><SelEnd>1128</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-01366d20><key>iaridepm.enu1</key></Toolbar-01366d20></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>732</Bottom><Right>199</Right><x>-2</x><y>-2</y><xscreen>312</xscreen><yscreen>375</yscreen><sizeHorzCX>243750</sizeHorzCX><sizeHorzCY>395570</sizeHorzCY><sizeVertCX>157031</sizeVertCX><sizeVertCY>774262</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>171</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>173</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>182489</sizeHorzCY><sizeVertCX>243750</sizeVertCX><sizeVertCY>395570</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

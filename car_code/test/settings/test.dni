@@ -1,0 +1,44 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[DebugChecksum]
+Checksum=-808011916
+[CallStack]
+ShowArgs=0
+[array_types]
+Fmt0=unsigned char[32]	3	0
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=0
+Graph=0
+Symbiont=0
+[Disassemble mode]
+mode=0
+[Breakpoints]
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\src\walk_test.c}.22.8" 1 0 0 0 "" 0 ""
+Count=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Aliases]
+A0=_ "C:\cygwin\sandbox\DriverLib\build\DriverLib.test\driverlib\cpu.c" ""
+A1=_ "C:\cygwin\sandbox\DriverLib\build\DriverLib.test\driverlib\interrupt.c" ""
+A2=_ "C:\cygwin\sandbox\DriverLib\build\DriverLib.test\driverlib\pwm.c" ""
+Count=3
+SuppressDialog=1

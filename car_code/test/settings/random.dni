@@ -1,0 +1,43 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[DebugChecksum]
+Checksum=-715203533
+[CallStack]
+ShowArgs=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=0
+Graph=0
+Symbiont=0
+[Disassemble mode]
+mode=0
+[Breakpoints]
+Count=0
+[Aliases]
+A0=_ "C:\cygwin\sandbox\DriverLib\build\DriverLib.test\driverlib\adc.c" ""
+A1=_ "C:\cygwin\sandbox\DriverLib\build\DriverLib.test\driverlib\cpu.c" ""
+A2=_ "C:\cygwin\sandbox\DriverLib\build\DriverLib.test\driverlib\interrupt.c" ""
+A3=_ "C:\cygwin\sandbox\DriverLib\build\DriverLib.test\driverlib\pwm.c" ""
+A4=_ "C:\cygwin\sandbox\DriverLib\build\DriverLib.test\driverlib\timer.c" ""
+Count=5
+SuppressDialog=1

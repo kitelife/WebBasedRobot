@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>test/Debug</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>915</ColumnWidth1><ColumnWidth2>244</ColumnWidth2><ColumnWidth3>61</ColumnWidth3></Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>320</Column0><Column1>8</Column1><Column2>11</Column2><Column3>0</Column3></ColumnWidths>
+      </Workspace>
+      <Debug-Log>
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1221</ColumnWidth1></Debug-Log>
+      <Find-in-Files>
+        
+        
+        
+      <ColumnWidth0>440</ColumnWidth0><ColumnWidth1>62</ColumnWidth1><ColumnWidth2>754</ColumnWidth2></Find-in-Files>
+    <TerminalIO/></Static>
+    <Windows>
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-32276-7519</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-12662-14641</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-4299-25032</Identity>
+            <TabName>Find in Files</TabName>
+            <Factory>Find-in-Files</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-10256-7522</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>test</ExpandedNode><ExpandedNode>test/lib</ExpandedNode><ExpandedNode>test/src</ExpandedNode><ExpandedNode>test/src/test</ExpandedNode><ExpandedNode>test/startup</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd1></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\main.c</Filename><XPos>0</XPos><YPos>81</YPos><SelStart>2302</SelStart><SelEnd>2302</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\nrf24l01.c</Filename><XPos>0</XPos><YPos>267</YPos><SelStart>9008</SelStart><SelEnd>9008</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\wireless_comm_test.c</Filename><XPos>0</XPos><YPos>30</YPos><SelStart>1155</SelStart><SelEnd>1192</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\motor.c</Filename><XPos>0</XPos><YPos>135</YPos><SelStart>4403</SelStart><SelEnd>4403</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\led.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>508</SelStart><SelEnd>508</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\startup.c</Filename><XPos>0</XPos><YPos>63</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\ISR.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>338</SelStart><SelEnd>338</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\StellarisWare\inc\hw_memmap.h</Filename><XPos>0</XPos><YPos>89</YPos><SelStart>5747</SelStart><SelEnd>5747</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-01365118><key>iaridepm.enu1</key></Toolbar-01365118></Sizes></Row0></Top><Left><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>727</Bottom><Right>359</Right><x>-2</x><y>-2</y><xscreen>117</xscreen><yscreen>144</yscreen><sizeHorzCX>91406</sizeHorzCX><sizeHorzCY>151899</sizeHorzCY><sizeVertCX>282031</sizeVertCX><sizeVertCY>768987</sizeVertCY></Rect></Wnd1></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>176</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>178</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>187764</sizeHorzCY><sizeVertCX>91406</sizeVertCX><sizeVertCY>151899</sizeVertCY></Rect></Wnd0></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

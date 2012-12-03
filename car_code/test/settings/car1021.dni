@@ -1,0 +1,79 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[DebugChecksum]
+Checksum=1866491899
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CallStack]
+ShowArgs=0
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[Breakpoints2]
+Count=0
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[Trace1]
+Enabled=0
+ShowSource=1
+[BreakpointUsageDialog]
+Placement=_ 422 358 859 637
+[array_types]
+Fmt0=unsigned char[33]	4	0
+Fmt1=unsigned long[72]	4	0
+[watch_formats]
+Fmt0={W}0:i	4	0
+Fmt1={W}0:pulData	4	0
+Fmt2={W}0:regVal	4	0
+Fmt3={W}0:ulBase	4	0
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=0
+Graph=0
+Symbiont=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Disassemble mode]
+mode=0
+[Breakpoints]
+Bp0=_ "EMUL_DATA" "SSIConfigSetExpClk" 0 0 0 116 0 "" 0 "" 0 0 0 4294967295
+Bp1=_ "EMUL_DATA" "SSIConfigSetExpClk" 1 0 0 116 0 "" 0 "" 0 0 0 4294967295
+Bp2=_ "EMUL_DATA" "nRF2_CEH" 0 0 0 116 0 "" 0 "" 0 0 0 4294967295
+Bp3=_ "EMUL_DATA" "GPIOPinIntClear" 1 0 0 116 0 "" 0 "" 0 0 0 4294967295
+Count=4
+[Aliases]
+A0=_ "C:\cygwin\sandbox\DriverLib\build\DriverLib.test\driverlib\adc.c" ""
+A1=_ "C:\cygwin\sandbox\DriverLib\build\DriverLib.test\driverlib\gpio.c" ""
+A2=_ "C:\cygwin\sandbox\DriverLib\build\DriverLib.test\driverlib\interrupt.c" ""
+A3=_ "C:\cygwin\sandbox\DriverLib\build\DriverLib.test\driverlib\ssi.c" ""
+A4=_ "C:\cygwin\sandbox\DriverLib\build\DriverLib.test\driverlib\sysctl.c" ""
+A5=_ "C:\cygwin\sandbox\DriverLib\build\DriverLib.test\driverlib\uart.c" ""
+Count=6
+SuppressDialog=1

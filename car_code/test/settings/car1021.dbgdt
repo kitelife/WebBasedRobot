@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Project>
+  <Desktop>
+    <Static>
+      <Debug-Log>
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1221</ColumnWidth1></Debug-Log>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>915</ColumnWidth1><ColumnWidth2>244</ColumnWidth2><ColumnWidth3>61</ColumnWidth3></Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>140</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Disassembly>
+        <col-names>
+          
+          
+        <item>Disassembly</item><item>_I0</item></col-names>
+        <col-widths>
+          
+          
+        <item>500</item><item>20</item></col-widths>
+        <DisasmHistory/>
+        
+        
+      <PreferedWindows><Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><ShowCodeCoverage>0</ShowCodeCoverage><ShowInstrProfiling>0</ShowInstrProfiling></Disassembly>
+      <WATCH_1>
+        <expressions>
+          
+          
+          
+        <item>banlance1</item><item>banlance2</item><item/></expressions>
+        <col-names>
+          
+          
+          
+          
+        <item>Expression</item><item>Location</item><item>Type</item><item>Value</item></col-names>
+        <col-widths>
+          
+          
+          
+          
+        <item>104</item><item>95</item><item>113</item><item>145</item></col-widths>
+      </WATCH_1>
+    <QuickWatch><col-names><item>Expression</item><item>Location</item><item>Type</item><item>Value</item></col-names><col-widths><item>100</item><item>150</item><item>100</item><item>100</item></col-widths><QWatchHistory><item>pulData</item></QWatchHistory></QuickWatch></Static>
+    <Windows>
+      
+      
+      
+      
+    <Wnd4>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-22584-1842</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-22061-1852</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd4><Wnd5>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-564-1846</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>car1021</ExpandedNode><ExpandedNode>car1021/lib</ExpandedNode><ExpandedNode>car1021/src</ExpandedNode><ExpandedNode>car1021/startup</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd5><Wnd6>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-32538-3498</Identity>
+            <TabName>Watch 1</TabName>
+            <Factory>WATCH_1</Factory>
+          </Tab>
+        <Tab><Identity>TabID-3271-27325</Identity><TabName>Quick Watch</TabName><Factory>QuickWatch</Factory></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd6><Wnd7><Tabs><Tab><Identity>TabID-3237-9277</Identity><TabName>Disassembly</TabName><Factory>Disassembly</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd7></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\car1021\src\main.c</Filename><XPos>0</XPos><YPos>110</YPos><SelStart>3377</SelStart><SelEnd>3377</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\car1021\src\motor.c</Filename><XPos>0</XPos><YPos>57</YPos><SelStart>2628</SelStart><SelEnd>2628</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\car1021\src\startup.c</Filename><XPos>0</XPos><YPos>114</YPos><SelStart>6468</SelStart><SelEnd>6483</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\car1021\src\delay.h</Filename><XPos>0</XPos><YPos>3</YPos><SelStart>641</SelStart><SelEnd>641</SelEnd></Tab><ActiveTab>3</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-01365808><key>iaridepm.enu1</key></Toolbar-01365808></Sizes></Row0><Row1><Sizes><Toolbar-04f5d350><key>debuggergui.enu1</key></Toolbar-04f5d350></Sizes></Row1></Top><Left><Row0><Sizes><Wnd5><Rect><Top>-2</Top><Left>-2</Left><Bottom>681</Bottom><Right>214</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>156250</sizeHorzCX><sizeHorzCY>211193</sizeHorzCY><sizeVertCX>168750</sizeVertCX><sizeVertCY>721225</sizeVertCY></Rect></Wnd5></Sizes></Row0></Left><Right><Row0><Sizes><Wnd6><Rect><Top>-2</Top><Left>-2</Left><Bottom>681</Bottom><Right>387</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>156250</sizeHorzCX><sizeHorzCY>211193</sizeHorzCY><sizeVertCX>303906</sizeVertCX><sizeVertCY>721225</sizeVertCY></Rect></Wnd6></Sizes></Row0><Row1><Sizes><Wnd7><Rect><Top>-2</Top><Left>385</Left><Bottom>681</Bottom><Right>577</Right><x>385</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>156250</sizeHorzCX><sizeHorzCY>211193</sizeHorzCY><sizeVertCX>150000</sizeVertCX><sizeVertCY>721225</sizeVertCY></Rect></Wnd7></Sizes></Row1></Right><Bottom><Row0><Sizes><Wnd4><Rect><Top>-2</Top><Left>-2</Left><Bottom>198</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>200</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>211193</sizeHorzCY><sizeVertCX>156250</sizeVertCX><sizeVertCY>211193</sizeVertCY></Rect></Wnd4></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Project>
+
+

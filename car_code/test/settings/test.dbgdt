@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Project>
+  <Desktop>
+    <Static>
+      <Debug-Log>
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1221</ColumnWidth1></Debug-Log>
+      <Build>
+        <ColumnWidth0>20</ColumnWidth0>
+        <ColumnWidth1>915</ColumnWidth1>
+        <ColumnWidth2>244</ColumnWidth2>
+        <ColumnWidth3>61</ColumnWidth3>
+      </Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>124</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Disassembly>
+        <col-names>
+          
+          
+        <item>Disassembly</item><item>_I0</item></col-names>
+        <col-widths>
+          
+          
+        <item>500</item><item>20</item></col-widths>
+        <DisasmHistory/>
+        
+        
+      <ShowCodeCoverage>0</ShowCodeCoverage><ShowInstrProfiling>0</ShowInstrProfiling></Disassembly>
+      <WATCH_1>
+        <expressions>
+          
+          
+        <item>rxbuf</item><item>rcvData</item><item>lspeed</item><item/></expressions>
+        <col-names>
+          
+          
+          
+          
+        <item>Expression</item><item>Location</item><item>Type</item><item>Value</item></col-names>
+        <col-widths>
+          
+          
+          
+          
+        <item>100</item><item>150</item><item>100</item><item>100</item></col-widths>
+      </WATCH_1>
+      <QuickWatch>
+        <col-names>
+          
+          
+          
+          
+        <item>Expression</item><item>Location</item><item>Type</item><item>Value</item></col-names>
+        <col-widths>
+          
+          
+          
+          
+        <item>100</item><item>150</item><item>100</item><item>100</item></col-widths>
+        <QWatchHistory>
+          
+          
+        <item>rcvData</item><item>rcvData[j]</item></QWatchHistory>
+      </QuickWatch>
+    </Static>
+    <Windows>
+      
+      
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-4299-30625</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-3776-30635</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-15047-30628</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>test</ExpandedNode><ExpandedNode>test/src</ExpandedNode><ExpandedNode>test/startup</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd1><Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-25796-30631</Identity>
+            <TabName>Disassembly</TabName>
+            <Factory>Disassembly</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-16010-708</Identity>
+            <TabName>Watch 1</TabName>
+            <Factory>WATCH_1</Factory>
+          </Tab>
+          <Tab>
+            <Identity>TabID-10371-13076</Identity>
+            <TabName>Quick Watch</TabName>
+            <Factory>QuickWatch</Factory>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\walk_test.c</Filename><XPos>0</XPos><YPos>9</YPos><SelStart>383</SelStart><SelEnd>383</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\ISR.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>211</SelStart><SelEnd>211</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\motor_encoder_test.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>49</SelStart><SelEnd>75</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\motor_encoder_test.c</Filename><XPos>0</XPos><YPos>3</YPos><SelStart>872</SelStart><SelEnd>872</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\motor.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>36</SelStart><SelEnd>156</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\led.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>14</SelStart><SelEnd>14</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\led.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\wireless_comm_test.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>128</SelStart><SelEnd>128</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\nrf24l01.c</Filename><XPos>0</XPos><YPos>167</YPos><SelStart>5320</SelStart><SelEnd>5320</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\nrf24l01.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>216</SelStart><SelEnd>216</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\startup.c</Filename><XPos>0</XPos><YPos>84</YPos><SelStart>1787</SelStart><SelEnd>1787</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\main.c</Filename><XPos>0</XPos><YPos>33</YPos><SelStart>1225</SelStart><SelEnd>1225</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\ISR.c</Filename><XPos>0</XPos><YPos>39</YPos><SelStart>1379</SelStart><SelEnd>1379</SelEnd></Tab><ActiveTab>12</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-01366fe0><key>iaridepm.enu1</key></Toolbar-01366fe0></Sizes></Row0><Row1><Sizes><Toolbar-0e855c18><key>debuggergui.enu1</key></Toolbar-0e855c18></Sizes></Row1></Top><Left><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>681</Bottom><Right>198</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>156250</sizeHorzCX><sizeHorzCY>210970</sizeHorzCY><sizeVertCX>156250</sizeVertCX><sizeVertCY>720464</sizeVertCY></Rect></Wnd1></Sizes></Row0></Left><Right><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>681</Bottom><Right>198</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>156250</sizeHorzCX><sizeHorzCY>210970</sizeHorzCY><sizeVertCX>156250</sizeVertCX><sizeVertCY>720464</sizeVertCY></Rect></Wnd2></Sizes></Row0><Row1><Sizes><Wnd3><Rect><Top>-2</Top><Left>196</Left><Bottom>681</Bottom><Right>463</Right><x>196</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>156250</sizeHorzCX><sizeHorzCY>210970</sizeHorzCY><sizeVertCX>208594</sizeVertCX><sizeVertCY>720464</sizeVertCY></Rect></Wnd3></Sizes></Row1></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>198</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>200</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>210970</sizeHorzCY><sizeVertCX>156250</sizeVertCX><sizeVertCY>210970</sizeVertCY></Rect></Wnd0></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Project>
+
+
