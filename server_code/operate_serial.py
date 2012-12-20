@@ -103,7 +103,7 @@ def send_cmd(cmd, target):
 
             print result_value
     except Exception, e:
-        result_value = e.message
+        result_value = e.message.decode('gbk').encode('utf-8')
 
     return result_value
 

@@ -50,7 +50,7 @@ class handle_multi_cmds(tornado.web.RequestHandler):
             true_code = True
             if cmd_len == 2 or cmd_len == 3:
                 second_part_list = cmd_parts[1].split("=")
-                if second_part_list[0] == "len":
+                if second_part_list[0] == "time":
                     cmd += " " + second_part_list[1]
                     var_len_count += 1
                 elif second_part_list[0] == "car":
@@ -61,7 +61,7 @@ class handle_multi_cmds(tornado.web.RequestHandler):
                     self.write(syntax_err_msg % (str(index+1), ))
             if cmd_len == 3:
                 third_part_list = cmd_parts[2].split("=")
-                if third_part_list[0] == "len":
+                if third_part_list[0] == "time":
                     if var_len_count == 1:
                         true_code = False
                         self.write(syntax_err_msg % (str(index+1), ));

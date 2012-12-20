@@ -11,10 +11,10 @@
     </head>
 
     <body>
-        <div class="container">
-            <div id="title">
-                <h2>基于Web的群体机器人远程控制台</h2>
-            </div>
+        <div id="title">
+            <h2>基于Web的群体机器人远程控制台</h2>
+        </div>
+        <div id="control-part">
             <div id="buttons" class="ui-box members">
                 <div class="ui-box-header">
                     <h4>基本控制</h4>
@@ -47,7 +47,7 @@
                         <button class="btn" id="one">单个</button>
                     </div>
                     <div id="cmddetails">
-                        <select id="cmd" name="cmd">
+                        <select id="cmd" name="cmd" class="input-medium">
                             <option>请选择指令</option>
                             <option value="run">运动</option>
                             <option value="stop">停止</option>
@@ -56,8 +56,8 @@
                             <option value="turnLeft">左转</option>
                             <option value="turnRight">右转</option>
                         </select>
-                        <input type="text" placeholder="请输入时间参数, 以秒为单位" name="args" id="distance"/>
-                        <select id="targetnum" name="targetnum" class="hidden">
+                        <input type="text" class="input-medium" placeholder="请输入时间参数(秒)" name="args" id="distance"/>
+                        <select id="targetnum" name="targetnum" class="hidden input-medium">
                             <option>请选择小车</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -85,6 +85,12 @@
             </div>
             <div id="textarea-status">
             </div>
+            </div>
+            <div id="video-part">
+                <iframe src="http://202.120.40.100:8020/video/mjpg.cgi?profileid=3">
+                </iframe>
+            </div>
+<!--
             <div id="footer">
                 <div>&copy; 2012 SI, Embedded Lab</div>
                 <div class="relativelinks">
@@ -92,6 +98,6 @@
                     <a href="about.html">关于</a>
                 </div>
             </div>
-        </div>
+-->
     </body>
 </html>

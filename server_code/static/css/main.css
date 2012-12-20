@@ -13,11 +13,14 @@ body{
 	margin-bottom: 25px;
 }
 
+/*
 #footer {
+	position: relative;
+	width: 100%;
 	text-align: center;
-	margin-top: 10px;
+	margin-bottom: 10px;
 }
-
+*/
 .relativelinks {
 	margin-top: 10px;
 	font-size: 15px;
@@ -59,8 +62,8 @@ a {
 }
 
 button {
-	margin-left: 60px;
-	margin-right: 60px;
+	margin-left: 40px;
+	margin-right: 40px;
 }
 
 .piliangcmd {
@@ -101,4 +104,23 @@ button {
 #buttons-status, #inputtexts-status, #textarea-status{
 	text-align: center;
 	color: red;
+}
+
+#video-part iframe{
+	height: 480px;
+	width: 640px;
+}
+
+#control-part{
+	float: left;
+	margin-left: 45px;
+	width:45%;
+}
+
+#video-part{
+	float: right;
+	margin-top: 40px;
+	margin-right: 35px;
+	text-align: center;
+	width: 45%;
 }
