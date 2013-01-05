@@ -109,6 +109,7 @@ button {
 #video-part iframe{
 	height: 480px;
 	width: 640px;
+	border: none;
 }
 
 #control-part{
