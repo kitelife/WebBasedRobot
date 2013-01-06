@@ -60,8 +60,7 @@ class main_handler(basic_handler):
                     err_msg += '你还没给该机器人%s发送过控制指令呢，如何停止呢' %(robot, ) + "<br />"
                     true_code = False
             if true_code:
-                encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, target)
-                print encoded_cmd_list, cmd_type
+                encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, robot)
                 status = operate_serial.send_cmd(encoded_cmd_list, cmd_type)
                 if status != 'true':
                     result_status = False
@@ -129,7 +128,6 @@ class detail_cmd_handler(basic_handler):
         if true_code:
             print cmd, target
             encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, target)
-            print encoded_cmd_list, cmd_type
             status = operate_serial.send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd)
             self.write(status)
         else:
@@ -263,7 +261,6 @@ class handle_multi_cmds(basic_handler):
                     elif third_part_list[0].strip() == 'car':
                         target = third_part_list[1].strip()
                 encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, target)
-                print encoded_cmd_list, cmd_type
                 status = operate_serial.send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd)
                 if status != 'true':
                     result_status += status + "<br />"

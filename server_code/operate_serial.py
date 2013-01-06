@@ -125,6 +125,7 @@ def send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd=0):
         serial_handler.flushInput()
         serial_handler.flushOutput()
         for encoded_cmd in encoded_cmd_list:
+            print encoded_cmd
             serial_handler.write(encoded_cmd)
             if cmd_type == "info":
                 response = serial_handler.read(32)
