@@ -4,9 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link type="text/css" rel="stylesheet" href="/static/css/bootstrap.min.css" />
         <link type="text/css" rel="stylesheet" href="/static/css/main.css" />
-        <script type="text/javascript" src='/static/js/jquery.js' charset="utf-8"></script>
         <script type="text/javascript" src="/static/js/bootstrap.min.js" charset="utf-8"></script>
-        <script type="text/javascript" src='/static/js/main.js' charset="utf-8"></script>
         <title>基于Web的群体机器人远程控制台</title>
     </head>
 
@@ -15,8 +13,8 @@
             <h2>基于Web的群体机器人远程控制台</h2>
         </div>
         <div class="line">
-            <form action="/exit" method="post">
-                <button type="submit" id="exit" class="btn btn-warning">退出控制</button>
+            <form action="/" method="get">
+                <button type="submit" id="recontrol" class="btn btn-warning">返回控制</button>
             </form>
         </div>
         <div id="control-part">
@@ -26,16 +24,16 @@
                 </div>
                 <div class="ui-box-container">
                     <div class="line">
-                        <button type="button" id="info" class="btn btn-info">查询</button>
-                        <button type="button" id="run" class="btn btn-success">运动</button>
-                        <button type="button" id="forward" class="btn btn-primary">向前</button>
-                        <button type="button" id="backward" class="btn btn-primary">向后</button>
+                        <button type="button" id="info" class="btn btn-info" disabled="disabeld">查询</button>
+                        <button type="button" id="run" class="btn btn-success" disabled="disabeld">运动</button>
+                        <button type="button" id="forward" class="btn btn-primary" disabled="disabeld">向前</button>
+                        <button type="button" id="backward" class="btn btn-primary" disabled="disabeld">向后</button>
                     </div>
                     <div class="line">
-                        <button type="button" id="turnLeft" class="btn btn-primary">左转</button>
-                        <button type="button" id="turnRight" class="btn btn-primary">右转</button>
+                        <button type="button" id="turnLeft" class="btn btn-primary" disabled="disabeld">左转</button>
+                        <button type="button" id="turnRight" class="btn btn-primary" disabled="disabeld">右转</button>
                         <button type="button" id="stop" disabled="disabled" class="btn btn-danger">停止</button>
-                        <button type="button" id="count" class="btn">计数</button>
+                        <button type="button" id="count" class="btn" disabled="disabeld">计数</button>
                     </div>
                 </div>
             </div>
@@ -48,11 +46,11 @@
                 </div>
                 <div class="ui-box-container" id="detailctr">
                     <div id="selecttarget" class="btn-group">
-                        <button class="btn btn-inverse" id="all">群体</button>
-                        <button class="btn" id="one">单个</button>
+                        <button class="btn btn-inverse" id="all" disabled="disabeld">群体</button>
+                        <button class="btn" id="one" disabled="disabeld">单个</button>
                     </div>
                     <div id="cmddetails">
-                        <select id="cmd" name="cmd" class="input-medium">
+                        <select id="cmd" name="cmd" class="input-medium" disabled="disabeld">
                             <option>请选择指令</option>
                             <option value="run">运动</option>
                             <option value="stop">停止</option>
@@ -61,8 +59,8 @@
                             <option value="turnLeft">左转</option>
                             <option value="turnRight">右转</option>
                         </select>
-                        <input type="text" class="input-medium" placeholder="请输入时间参数(秒)" name="args" id="distance"/>
-                        <select id="targetnum" name="targetnum" class="hidden input-medium">
+                        <input type="text" class="input-medium" placeholder="请输入时间参数(秒)" name="args" id="distance" disabled="disabeld"/>
+                        <select id="targetnum" name="targetnum" class="hidden input-medium" disabled="disabeld">
                             <option>请选择小车</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -70,7 +68,7 @@
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
-                        <button type="submit" class="btn btn-primary" id="senddetailcmd">发送</button>
+                        <button type="submit" class="btn btn-primary" id="senddetailcmd" disabled="disabeld">发送</button>
                     </div>
                     </div>
                 </div>
@@ -83,8 +81,8 @@
                 </div>
                 <div class="ui-box-container">
                     <div class="piliangcmd">
-                        <textarea class="input-xxlarge" rows="5" id="multicmds"></textarea>
-                        <button type="button" id="commitpiliangcmd" class="btn btn-primary">发送</button>
+                        <textarea class="input-xxlarge" rows="5" id="multicmds" disabled="disabeld"></textarea>
+                        <button type="button" id="commitpiliangcmd" class="btn btn-primary" disabled="disabeld">发送</button>
                     </div>
                 </div>
             </div>

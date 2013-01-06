@@ -1,5 +1,6 @@
 # -*- coding: utf-8 *-*
 import serial
+import time
 
 CMD_CODE = {
     'info': '1',
@@ -14,8 +15,13 @@ CMD_CODE = {
 
 version_dict = {'1': 0, '2': 0, '3': 0, '4': 0, '5': 0}
 
+def restore_version_dict():
+    for key in version_dict:
+        version_dict[key] = 0
+
 def scan():
-    '''scan for available ports. return a list of tuples (num, name)'''
+    '''串口扫描查找'''
+
     available = []
     for i in range(256):
         try:
@@ -26,15 +32,13 @@ def scan():
             pass
     return available
 
-def send_cmd(cmd, target):
-
-    encoded_cmd_list = list()
-
+def encode_cmd(cmd, target):
+    '''功能：指令编码'''
     '''
     cmd: 包含两个部分---指令本身以及其参数，以空格分隔
     target: 小车的编号
     '''
-    result_value = ''
+    encoded_cmd_list = list()
     
     data_list = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 
                     '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
@@ -99,7 +103,13 @@ def send_cmd(cmd, target):
             index -= 1
         data_str = ''.join(data_list)
         encoded_cmd_list.append(data_str)        
-    print encoded_cmd_list
+    cmd_type = cmd_list[0]
+    return (encoded_cmd_list, cmd_type)
+
+def send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd=0):
+    '''功能：指令发送'''
+
+    result_value = ''
     try:
         serial_handler = serial.Serial(2,
                                         baudrate=345600,
@@ -115,8 +125,8 @@ def send_cmd(cmd, target):
         serial_handler.flushInput()
         serial_handler.flushOutput()
         for encoded_cmd in encoded_cmd_list:
-            serial_handler.write(data_str)
-            if cmd_list[0] == "info":
+            serial_handler.write(encoded_cmd)
+            if cmd_type == "info":
                 response = serial_handler.read(32)
                 print response
                 result_value += response[0] + "号小车 --- " + "电量：" + response[1] + "." + response[2] + "(伏)；"
@@ -126,12 +136,15 @@ def send_cmd(cmd, target):
         result_value = e.message.decode('gbk').encode('utf-8')
     if result_value == '':
         result_value = 'true'
+    
+    # 在服务器端实现控制指令的参数功能
+    time.sleep(arg_of_cmd)
+
     return result_value
 
 
 if __name__ == '__main__':
-
-    import time
+    '''单元测试'''
     
     send_cmd('info', 'all')
     time.sleep(1)

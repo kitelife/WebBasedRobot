@@ -14,23 +14,19 @@ $(function(){
 		var id = $(this).attr("id");
 		if(contain(cmd_array, id)){
 			$(this).attr("disabled", "disabled");
+			$("#buttons-status").empty();
 			$.post("/", {command: id, towho: 'x'}, function(data){
-				if(data === "true"){
-					if(id === "run"){
-						$("#stop").removeAttr("disabled");
-					}
-					else if(id === "stop")
-					{
-						$("#run").removeAttr("disabled");
-					}
-					else{
-						ele.removeAttr("disabled");
-					}
+				if(id === "run"){
+					$("#stop").removeAttr("disabled");
+				}
+				else if(id === "stop")
+				{
+					$("#run").removeAttr("disabled");
 				}
 				else{
-					$("#buttons-status").empty().append(data);
-					ele.removeAttr('disabled');
+					ele.removeAttr("disabled");
 				}
+				$("#buttons-status").append(data);
 			});
 		}
 		else if(id === "all")
@@ -48,6 +44,7 @@ $(function(){
 		else if(id === "senddetailcmd")
 		{
 			$(this).attr("disabled", "disabled");
+			$("#inputtexts-status").empty();
 			var cmd = $("#cmd").val();
 			var arguments = $("#distance").val();
 			var targetnum = '0';
@@ -64,13 +61,22 @@ $(function(){
 				ele.removeAttr("disabled");
 			}
 			else{
-				
+				if(targetnum == 'x'){
+					if(cmd == 'run'){
+						$("#stop").removeAttr("disabled");
+						$("#run").attr("disabled", "disabled");
+					}
+					else if(cmd == 'stop'){
+						$("#run").removeAttr("disabled");
+						$("#stop").attr("disabled", "disabled");
+					}
+				}
 				if(arguments === "")
 					arguments = " ";
 
 				$.post("/handledetailcmd", {command: cmd, args: arguments, target: targetnum}, function(data){
 					if(data !== "true"){
-						$("#inputtexts-status").empty().append(data);
+						$("#inputtexts-status").append(data);
 					}
 					ele.removeAttr("disabled");
 				});
@@ -81,6 +87,7 @@ $(function(){
 		{
 			var ele = $(this);
 			$(this).attr("disabled", "disabled");
+			$("#textarea-status").empty();
 			var multi_cmds = $("#multicmds").val().trim();
 			if(multi_cmds === ""){
 				alert("输入不能为空");
@@ -90,7 +97,7 @@ $(function(){
 				$.post("/handlemulticmds", {multicmds: multi_cmds}, function(data){
 					if(data !== "true")
 					{
-						$("#textarea-status").empty().append(data);
+						$("#textarea-status").append(data);
 					}
 					ele.removeAttr("disabled");
 				});

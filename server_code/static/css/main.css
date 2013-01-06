@@ -120,8 +120,13 @@ button {
 
 #video-part{
 	float: right;
-	margin-top: 40px;
+	margin-top: 20px;
 	margin-right: 35px;
 	text-align: center;
 	width: 45%;
+}
+
+#exit, #recontrol{
+	float: right;
+	margin-right: 80px;
 }
