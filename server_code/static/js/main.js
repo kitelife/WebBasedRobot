@@ -1,58 +1,34 @@
 $(function() {
-	var time_records = [];
+	var first_time_records = [],
+		second_time_records = [],
+		third_time_records = [];
 
-	function graph_time_delay(container) {
+	function graph_three_time_delay() {
+		nv.addGraph(function() {
+			var chart = nv.models.lineChart();
 
-		var
-		start = 0,
-			options, graph, i, x, o;
+			chart.xAxis.axisLabel('Number').tickFormat(d3.format(',r'));
+			chart.yAxis.axisLabel('Time (s)').tickFormat(d3.format('.03f'));
 
-		options = {
-			xaxis: {
-				mode: "int",
-				labelsAngle: 45
-			},
-			selection: {
-				mode: 'x'
-			},
-			HtmlText: false,
-			title: 'Time-Delay'
-		};
-
-		// Draw graph with default options, overwriting with passed options
-
-		function drawGraph(opts) {
-
-			// Clone the options, so the 'options' variable always keeps intact.
-			o = Flotr._.extend(Flotr._.clone(options), opts || {});
-
-			// Return a new graph.
-			return Flotr.draw(
-			container, [time_records], o);
-		}
-
-		graph = drawGraph();
-
-		Flotr.EventAdapter.observe(container, 'flotr:select', function(area) {
-			// Draw selected area
-			graph = drawGraph({
-				xaxis: {
-					min: area.x1,
-					max: area.x2,
-					mode: 'int',
-					labelsAngle: 45
-				},
-				yaxis: {
-					min: area.y1,
-					max: area.y2
-				}
+			d3.select('#time-statistics svg').datum(get_time_data()).transition().duration(500).call(chart);
+			nv.utils.windowResize(function() {
+				d3.select('#time-statistics svg').call(chart)
 			});
+			return chart;
 		});
 
-		// When graph is clicked, draw the graph with default area.
-		Flotr.EventAdapter.observe(container, 'flotr:click', function() {
-			graph = drawGraph();
-		});
+		function get_time_data() {
+			return [{
+				values: first_time_records,
+				key: '基本控制'
+			}, {
+				values: second_time_records,
+				key: '精确控制'
+			}, {
+				values: third_time_records,
+				key: '批量指令'
+			}];
+		}
 	}
 
 	$("button").live('click', function(event) {
@@ -83,8 +59,9 @@ $(function() {
 				}
 				$("#buttons-status").append(data);
 				var end_time = (new Date()).getTime();
-				time_records.push([time_records.length + 1, (end_time - begin_time) / 1000]);
-				graph_time_delay(document.getElementById("time-statistics"));
+				first_time_records.push({x:first_time_records.length + 1, y:(end_time - begin_time) / 1000});
+				//$("#time-statistics svg").empty();
+				graph_three_time_delay()
 			});
 		} else if(id === "all") {
 			$("#targetnum").addClass("hidden");
@@ -130,8 +107,9 @@ $(function() {
 					}
 					ele.removeAttr("disabled");
 					var end_time = (new Date()).getTime();
-					time_records.push([time_records.length + 1, (end_time - begin_time) / 1000]);
-					graph_time_delay(document.getElementById("time-statistics"));
+					second_time_records.push({x:second_time_records.length + 1, y:(end_time - begin_time) / 1000});
+					//$("#time-statistics svg").empty();
+					graph_three_time_delay()
 				});
 			}
 
@@ -153,8 +131,9 @@ $(function() {
 					}
 					ele.removeAttr("disabled");
 					var end_time = (new Date()).getTime();
-					time_records.push([time_records.length + 1, (end_time - begin_time) / 1000]);
-					graph_time_delay(document.getElementById("time-statistics"));
+					third_time_records.push({x: third_time_records.length + 1, y:(end_time - begin_time) / 1000});
+					//$("#time-statistics svg").empty();
+					graph_three_time_delay()
 				});
 			}
 		}

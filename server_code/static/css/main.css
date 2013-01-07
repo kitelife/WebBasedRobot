@@ -134,9 +134,14 @@ button {
 
 #time-statistics{
 	float: left;
-	margin-left: 230px;
+	margin-left: 180px;
 	margin-bottom: 30px;
-    width : 60%;
+	margin-top: 30px;
+    width : 70%;
     height: 500px;
     /*margin: 8px auto;*/
+}
+
+#time-statistics svg{
+	height: 500px;
 }
