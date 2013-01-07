@@ -103,11 +103,14 @@ class handle_multi_cmds(basic_handler):
                     arg_of_cmd = int(second_part_list[1].strip())
                     print arg_of_cmd
                     if arg_of_cmd > 99:
-                        err_msg += "第%s条代码：时间参数应小于100"
+                        err_msg += "第%s条代码：时间参数应小于100" %(str(index+1), ) + "<br />"
                         true_code = False
                     var_time_count += 1
                 elif second_part_list[0].strip() == "car":
                     target = second_part_list[1].strip()
+                    if target not in operate_serial.version_dict.keys():
+                        err_msg += "第%s条代码：不存在该小车" %(str(index+1), ) + "<br />"
+                        true_code= False
                     var_car_count += 1
                 else:
                     true_code = False
@@ -131,6 +134,9 @@ class handle_multi_cmds(basic_handler):
                         err_msg += "第%s条代码重复出现参数car" % (str(index+1), ) + "<br />"
                     else:
                         target = third_part_list[1].strip()
+                        if target not in operate_serial.version_dict.keys():
+                            err_msg += "第%s条代码：不存在该小车" %(str(index+1), ) + "<br />"
+                            true_code = False
                         var_car_count += 1
                 else:
                     true_code = False

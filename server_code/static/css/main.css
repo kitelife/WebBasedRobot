@@ -114,19 +114,29 @@ button {
 
 #control-part{
 	float: left;
-	margin-left: 45px;
-	width:45%;
+	margin-left: 5px;
+	width:48%;
 }
 
 #video-part{
 	float: right;
 	margin-top: 20px;
 	margin-right: 35px;
+	margin-bottom: 50px;
 	text-align: center;
 	width: 45%;
 }
 
 #exit, #recontrol{
 	float: right;
-	margin-right: 80px;
+	margin-right: 40px;
+}
+
+#time-statistics{
+	float: left;
+	margin-left: 230px;
+	margin-bottom: 30px;
+    width : 60%;
+    height: 500px;
+    /*margin: 8px auto;*/
 }
