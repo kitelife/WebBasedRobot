@@ -108,7 +108,6 @@ def encode_cmd(cmd, target):
 
 def send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd=0):
     '''功能：指令发送'''
-
     result_value = ''
     try:
         serial_handler = serial.Serial(2,
@@ -127,12 +126,15 @@ def send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd=0):
         for encoded_cmd in encoded_cmd_list:
             print encoded_cmd
             serial_handler.write(encoded_cmd)
+            time.sleep(0.5)
+            '''
             if cmd_type == "info":
                 response = serial_handler.read(32)
                 print response
                 result_value += response[0] + "号小车 --- " + "电量：" + response[1] + "." + response[2] + "(伏)；"
                 result_value += "左电机: " + response[3] + response[4] + response[5] + response[6] + "，"
                 result_value += "右电机：" + response[7] + response[8] + response[9] + response[10]
+            '''
     except Exception, e:
         result_value = e.message.decode('gbk').encode('utf-8')
     if result_value == '':

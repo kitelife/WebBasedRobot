@@ -9,9 +9,6 @@ import tornado.web
 
 import operate_serial
 
-# 用于处理控制指令之间的逻辑问题
-STATE_DICT = dict()
-
 
 class basic_handler(tornado.web.RequestHandler):
     
@@ -38,38 +35,9 @@ class main_handler(basic_handler):
         target = self.get_argument("towho").strip().lower()
         print cmd, target
 
-        result_status = True
-        err_msg = ""
-
-        for robot in operate_serial.version_dict.keys():
-            true_code = True
-            last_store_state = STATE_DICT.setdefault(robot, '')
-            if cmd == 'run' and robot:
-                if last_store_state == 'stop' or last_store_state == '':
-                    STATE_DICT[robot] = cmd
-                else:
-                    err_msg += '机器人%s已在运动，不能重复发送"运动"指令' %(robot, ) + "<br />"
-                    true_code = False
-            elif cmd == 'stop' and robot:
-                if last_store_state == 'run':
-                    STATE_DICT[robot] = cmd
-                elif last_store_state == 'stop':
-                    err_msg += '机器人%s已经停止，不能重复发送"停止"指令' %(robot, ) + "<br />"
-                    true_code = False
-                else:
-                    err_msg += '你还没给该机器人%s发送过控制指令呢，如何停止呢' %(robot, ) + "<br />"
-                    true_code = False
-            if true_code:
-                encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, robot)
-                status = operate_serial.send_cmd(encoded_cmd_list, cmd_type)
-                if status != 'true':
-                    result_status = False
-                else:
-                    err_msg += status + "<br />"
-        if result_status:
-            self.write('true')
-        else:
-            self.write(err_msg)
+        encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, target)
+        status = operate_serial.send_cmd(encoded_cmd_list, cmd_type)
+        self.write(status)
 
 class detail_cmd_handler(basic_handler):
 
@@ -82,42 +50,6 @@ class detail_cmd_handler(basic_handler):
         cmd = self.get_argument("command").strip().lower()
         args = self.get_argument("args").strip().lower()
         target = self.get_argument("target").strip().lower().encode('utf-8')
-        if target == 'x':
-            for robot in operate_serial.version_dict.keys():
-                last_store_state = STATE_DICT.setdefault(robot, '')
-                if cmd == 'run' and robot:
-                    if last_store_state == 'stop' or last_store_state == '':
-                        STATE_DICT[robot] = cmd
-                    else:
-                        err_msg += '机器人%s已在运动，不能重复发送"运动"指令' %(robot, ) + "<br />"
-                        true_code = False
-                elif cmd == 'stop' and robot:
-                    if last_store_state == 'run':
-                        STATE_DICT[robot] = cmd
-                    elif last_store_state == 'stop':
-                        err_msg += '机器人%s已经停止，不能重复发送"停止"指令' %(robot, ) + "<br />"
-                        true_code = False
-                    else:
-                        err_msg += '你还没给该机器人%s发送过控制指令呢，如何停止呢' %(robot, ) + "<br />"
-                        true_code = False
-        else:
-            if cmd == 'run' and target:
-                last_store_state = STATE_DICT.setdefault(target, '')
-                if last_store_state == 'stop' or last_store_state == '':
-                    STATE_DICT[target] = cmd
-                else:
-                    err_msg += '机器人%s已在运动，不能重复发送"运动"指令' %(target, ) + "<br />"
-                    true_code = False
-            elif cmd == 'stop' and target:
-                last_store_state = STATE_DICT.setdefault(target, '')
-                if last_store_state =='run':
-                    STATE_DICT[target] = cmd
-                elif last_store_state == 'stop':
-                    err_msg += '机器人%s已经停止，不能重复发送"停止"指令' %(target, ) + "<br />"
-                    true_code = False
-                else:
-                    err_msg += '你还没给该机器人%s发送过控制指令呢，如何停止呢' %(target, ) + "<br />"
-                    true_code = False
         if args != "":
             arg_of_cmd = int(args)
         if arg_of_cmd > 99:
@@ -195,45 +127,6 @@ class handle_multi_cmds(basic_handler):
                 else:
                     true_code = False
                     err_msg += arg_name_err % (str(index+1), 2) + "<br />"
-            if cmd == 'run' and target:
-                if target == 'x':
-                    for robot in operate_serial.version_dict.keys():
-                        last_store_state = STATE_DICT.setdefault(robot, '')
-                        
-                        if last_store_state == 'stop' or last_store_state == '':
-                            STATE_DICT[robot] = cmd
-                        else:
-                            err_msg += '第%s条代码：机器人%s已在运动，不能重复发送"运动"指令' %(str(index+1), robot) + "<br />"
-                            true_code = False
-                else:
-                    last_store_state = STATE_DICT.setdefault(target, '')
-                    if last_store_state == 'stop' or last_store_state == '':
-                        STATE_DICT[target] = cmd
-                    else:
-                        err_msg += '第%s条代码：机器人%s已在运动，不能重复发送"运动"指令' %(str(index+1), target) + "<br />"
-                        true_code = False
-            elif cmd == 'stop' and target:
-                if target == 'x':
-                    for robot in operate_serial.version_dict.keys():
-                        last_store_state = STATE_DICT.setdefault(robot, '')
-                        if last_store_state == 'run':
-                            STATE_DICT[robot] = cmd
-                        elif last_store_state == 'stop':
-                            err_msg += '第%s条代码：机器人%s已经停止，不能重复发送"停止"指令' %(str(index+1), robot) + "<br />"
-                            true_code = False
-                        else:
-                            err_msg += '第%s条代码：你还没给机器人%s发送过控制指令呢，如何停止呢' %(str(index+1), robot) + "<br />"
-                            true_code = False
-                else:
-                    last_store_state = STATE_DICT.setdefault(target, '')
-                    if last_store_state =='run':
-                        STATE_DICT[target] = cmd
-                    elif last_store_state == 'stop':
-                        err_msg += '第%s条代码：机器人%s已经停止，不能重复发送"停止"指令' %(str(index+1), target) + "<br />"
-                        true_code = False
-                    else:
-                        err_msg += '第%s条代码：你还没给该机器人发送过控制指令呢，如何停止呢' %(str(index+1), ) + "<br />"
-                        true_code = False
             if cmd not in operate_serial.CMD_CODE.keys() or target == None:
                 err_msg += '第%s条代码：指令格式不对' %(str(index+1), ) + "<br />"
                 true_code = False
@@ -261,7 +154,7 @@ class handle_multi_cmds(basic_handler):
                     elif third_part_list[0].strip() == 'car':
                         target = third_part_list[1].strip()
                 encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, target)
-                status = operate_serial.send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd)
+                status = operate_serial.send_cmd(encoded_cmd_list, cmd_type, int(arg_of_cmd))
                 if status != 'true':
                     result_status += status + "<br />"
             self.write(result_status)
@@ -275,7 +168,6 @@ class exit_handler(basic_handler):
         self.render("static.html", title="console")
 
     def post(self):
-        STATE_DICT.clear()
         operate_serial.restore_version_dict()
         basic_handler.session_id = None
         self.render("static.html", title="console")
