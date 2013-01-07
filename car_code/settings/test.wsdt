@@ -18,7 +18,7 @@
           
           
           
-        <Column0>320</Column0><Column1>8</Column1><Column2>11</Column2><Column3>0</Column3></ColumnWidths>
+        <Column0>222</Column0><Column1>8</Column1><Column2>11</Column2><Column3>0</Column3></ColumnWidths>
       </Workspace>
       <Debug-Log>
         
@@ -73,14 +73,14 @@
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\main.c</Filename><XPos>0</XPos><YPos>148</YPos><SelStart>5477</SelStart><SelEnd>5477</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\nrf24l01.c</Filename><XPos>0</XPos><YPos>267</YPos><SelStart>9008</SelStart><SelEnd>9008</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\wireless_comm_test.c</Filename><XPos>0</XPos><YPos>30</YPos><SelStart>1155</SelStart><SelEnd>1192</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\motor.c</Filename><XPos>0</XPos><YPos>135</YPos><SelStart>4403</SelStart><SelEnd>4403</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\led.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>508</SelStart><SelEnd>508</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\startup.c</Filename><XPos>0</XPos><YPos>63</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\ISR.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>338</SelStart><SelEnd>338</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\nrf24l01.c</Filename><XPos>0</XPos><YPos>267</YPos><SelStart>9008</SelStart><SelEnd>9008</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\main.c</Filename><XPos>0</XPos><YPos>6</YPos><SelStart>996</SelStart><SelEnd>996</SelEnd></Tab><ActiveTab>1</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\wireless_comm_test.c</Filename><XPos>0</XPos><YPos>30</YPos><SelStart>1155</SelStart><SelEnd>1192</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\motor.c</Filename><XPos>0</XPos><YPos>135</YPos><SelStart>4403</SelStart><SelEnd>4403</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\led.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>508</SelStart><SelEnd>508</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\startup.c</Filename><XPos>0</XPos><YPos>63</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\ISR.c</Filename><XPos>0</XPos><YPos>132</YPos><SelStart>135</SelStart><SelEnd>135</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\test\src\keys.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>160</SelStart><SelEnd>160</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-01365110><key>iaridepm.enu1</key></Toolbar-01365110></Sizes></Row0></Top><Left><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>727</Bottom><Right>359</Right><x>-2</x><y>-2</y><xscreen>117</xscreen><yscreen>144</yscreen><sizeHorzCX>91406</sizeHorzCX><sizeHorzCY>151899</sizeHorzCY><sizeVertCX>282031</sizeVertCX><sizeVertCY>768987</sizeVertCY></Rect></Wnd3></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>176</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>178</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>187764</sizeHorzCY><sizeVertCX>91406</sizeVertCX><sizeVertCY>151899</sizeVertCY></Rect></Wnd2></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-01365140><key>iaridepm.enu1</key></Toolbar-01365140></Sizes></Row0></Top><Left><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>727</Bottom><Right>261</Right><x>-2</x><y>-2</y><xscreen>117</xscreen><yscreen>144</yscreen><sizeHorzCX>91406</sizeHorzCX><sizeHorzCY>151899</sizeHorzCY><sizeVertCX>205469</sizeVertCX><sizeVertCY>768987</sizeVertCY></Rect></Wnd3></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>176</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>178</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>187764</sizeHorzCY><sizeVertCX>91406</sizeVertCX><sizeVertCY>151899</sizeVertCY></Rect></Wnd2></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 

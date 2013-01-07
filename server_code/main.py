@@ -3,6 +3,7 @@ import os
 import re
 import time
 import random
+import json
 
 import tornado.ioloop
 import tornado.web
@@ -20,14 +21,14 @@ class main_handler(basic_handler):
     def get(self):
         if basic_handler.session_id != None:
             if self.get_secure_cookie("current_user") == basic_handler.session_id:
-                self.render("index.html", title="console")
+                self.render("index.html", robot_list = operate_serial.version_dict.keys())
             else:
-                self.render("static.html", title="console")
+                self.render("static.html")
         else:
             session_id = str(time.time()) + str(random.uniform(100, 999))
             self.set_secure_cookie("current_user", session_id)
             basic_handler.session_id = session_id
-            self.render("index.html", title="console")
+            self.render("index.html", robot_list = operate_serial.version_dict.keys())
     
     def post(self):
         '''处理基本控制'''
@@ -36,8 +37,11 @@ class main_handler(basic_handler):
         print cmd, target
 
         encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, target)
-        status = operate_serial.send_cmd(encoded_cmd_list, cmd_type)
-        self.write(status)
+        results = operate_serial.send_cmd(encoded_cmd_list, cmd_type)
+        if type(results) == type(list()):
+            self.write(json.dumps(results))
+        else:
+            self.write(results)
 
 class detail_cmd_handler(basic_handler):
 
@@ -60,8 +64,12 @@ class detail_cmd_handler(basic_handler):
         if true_code:
             print cmd, target
             encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, target)
-            status = operate_serial.send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd)
-            self.write(status)
+            print encoded_cmd_list
+            results = operate_serial.send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd)
+            if type(results) == type(list()):
+                 self.write(json.dumps(results))
+            else:
+                self.write(results)
         else:
             self.write(err_msg)
 
@@ -134,7 +142,7 @@ class handle_multi_cmds(basic_handler):
         if true_code:
             # 如果没有语法与逻辑错误，则逐条指令解析并发送
 
-            result_status = ""
+            results = ''
 
             for ctr_cmd in cmd_list:
                 ctr_cmd = ctr_cmd.strip("\n")
@@ -154,10 +162,12 @@ class handle_multi_cmds(basic_handler):
                     elif third_part_list[0].strip() == 'car':
                         target = third_part_list[1].strip()
                 encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, target)
-                status = operate_serial.send_cmd(encoded_cmd_list, cmd_type, int(arg_of_cmd))
-                if status != 'true':
-                    result_status += status + "<br />"
-            self.write(result_status)
+                result = operate_serial.send_cmd(encoded_cmd_list, cmd_type, int(arg_of_cmd))
+                if type(result) == type(list()):
+                    results += json.dumps(result)
+                else:
+                    results += result + "<br />"
+            self.write(results)
         else:
             self.write(err_msg)
 
@@ -165,12 +175,12 @@ class handle_multi_cmds(basic_handler):
 class exit_handler(basic_handler):
 
     def get(self):
-        self.render("static.html", title="console")
+        self.render("static.html")
 
     def post(self):
         operate_serial.restore_version_dict()
         basic_handler.session_id = None
-        self.render("static.html", title="console")
+        self.render("static.html")
 
 
 settings = {

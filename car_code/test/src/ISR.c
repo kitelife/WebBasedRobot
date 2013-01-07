@@ -184,14 +184,14 @@ void Timer0A_ISR(void)
 /*colliding switch*/
 void GPIO_Port_C_ISR(void)
 {
-  //GPIOPinIntClear(GPIO_PORTC_BASE,KEY0 | KEY1);
- /* ledTurnover(LED1);
+  GPIOPinIntClear(GPIO_PORTC_BASE,SW1 | SW2);
+  ledTurnover(LED1);
   backward();
   delay_ms(500);//后退一段距离
   turn();
   delay_ms(300);//转弯一段时间，逆时针
-  forward();*/
-  GPIOPinIntClear(GPIO_PORTC_BASE,KEY0 | KEY1);
+  forward();
+  GPIOPinIntClear(GPIO_PORTC_BASE,SW1 | SW2);
 }
 
 /*infrared detection*/

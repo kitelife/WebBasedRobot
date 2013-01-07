@@ -13,7 +13,7 @@ CMD_CODE = {
     'count': '8'
 }
 
-version_dict = {'1': 0, '2': 0, '3': 0, '4': 0, '5': 0}
+version_dict = {'1': 0, '2': 0}
 
 def restore_version_dict():
     for key in version_dict:
@@ -108,14 +108,14 @@ def encode_cmd(cmd, target):
 
 def send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd=0):
     '''功能：指令发送'''
-    result_value = ''
+    result_value = list()
     try:
         serial_handler = serial.Serial(2,
                                         baudrate=345600,
                                         bytesize=serial.EIGHTBITS,
                                         parity=serial.PARITY_NONE,
                                         stopbits=serial.STOPBITS_ONE,
-                                        timeout=3,
+                                        timeout=2,
                                         xonxoff=0,
                                         rtscts=0
                                         )
@@ -125,8 +125,26 @@ def send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd=0):
         serial_handler.flushOutput()
         for encoded_cmd in encoded_cmd_list:
             print encoded_cmd
-            serial_handler.write(encoded_cmd)
-            time.sleep(0.5)
+
+            count = 1
+            status = True
+            while status and count < 6:
+                serial_handler.write(encoded_cmd)
+                result = serial_handler.read(32)
+                print result
+                print type(result)
+                if result != '':
+                    status = False
+                else:
+                    count += 1
+            result_value.append([encoded_cmd, count, 1])
+            if count >= 6:
+                result_value[-1][1] = 5
+                result_value[-1][2] = 0
+            # 在服务器端实现控制指令的参数功能
+            if arg_of_cmd > 0:
+                time.sleep(arg_of_cmd)
+
             '''
             if cmd_type == "info":
                 response = serial_handler.read(32)
@@ -135,14 +153,9 @@ def send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd=0):
                 result_value += "左电机: " + response[3] + response[4] + response[5] + response[6] + "，"
                 result_value += "右电机：" + response[7] + response[8] + response[9] + response[10]
             '''
+        serial_handler.close()
     except Exception, e:
         result_value = e.message.decode('gbk').encode('utf-8')
-    if result_value == '':
-        result_value = 'true'
-    
-    # 在服务器端实现控制指令的参数功能
-    time.sleep(arg_of_cmd)
-
     return result_value
 
 
