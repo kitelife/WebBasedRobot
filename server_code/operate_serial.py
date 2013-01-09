@@ -13,7 +13,14 @@ CMD_CODE = {
     'count': '8'
 }
 
-version_dict = {'1': 0, '2': 0}
+CODE_CMD = {'1': '查询', '2': '运动', '3': '向前', '4': '向后', '5': '左转', 
+            '6': '右转', '7': '停止', '8': '计数'}
+
+version_dict = {}
+
+def init_version_dict(robots_num):
+    for num in xrange(1, robots_num+1):
+        version_dict.setdefault(str(num), 0)
 
 def restore_version_dict():
     for key in version_dict:
@@ -32,7 +39,7 @@ def scan():
             pass
     return available
 
-def encode_cmd(cmd, target):
+def encode_cmd(cmd, target, arg_of_cmd=''):
     '''功能：指令编码'''
     '''
     cmd: 包含两个部分---指令本身以及其参数，以空格分隔
@@ -55,14 +62,13 @@ def encode_cmd(cmd, target):
             data_list[2] = cmd_code[0]
             data_list[3] = cmd_code[1]
 
-    if len(cmd_list) == 2:
-        cmd_arg = cmd_list[1].strip()
+    if arg_of_cmd != '':
         '''指令参数编码使用4，5两个字节存储，4字节存储编码的十位，5字节存编码的个位'''
-        if len(cmd_arg) == 1:
-            data_list[5] = cmd_arg
+        if len(arg_of_cmd) == 1:
+            data_list[5] = arg_of_cmd
         elif len(cmd_arg) == 2:
-            data_list[4] = cmd_arg[0]
-            data_list[5] = cmd_arg[1]
+            data_list[4] = arg_of_cmd[0]
+            data_list[5] = arg_of_cmd[1]
     '''使用"x"来指代所有小车'''
     if target == 'all':
         target_code = 'x'
@@ -81,7 +87,7 @@ def encode_cmd(cmd, target):
             version = version_dict[key]
             if version >= 10000:
                 version = 1
-            index = 8
+            index = 9
             while version > 0:
                 remainder = version % 10
                 one_target_data_list[index] = str(remainder)
@@ -95,7 +101,7 @@ def encode_cmd(cmd, target):
         version = version_dict[target_code]
         if version >= 10000:
             version = 1
-        index = 8
+        index = 9
         while version > 0:
             remainder = version % 10
             data_list[index] = str(remainder)
@@ -106,7 +112,7 @@ def encode_cmd(cmd, target):
     cmd_type = cmd_list[0]
     return (encoded_cmd_list, cmd_type)
 
-def send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd=0):
+def send_cmd(encoded_cmd_list, cmd_type):
     '''功能：指令发送'''
     result_value = list()
     try:
@@ -115,7 +121,7 @@ def send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd=0):
                                         bytesize=serial.EIGHTBITS,
                                         parity=serial.PARITY_NONE,
                                         stopbits=serial.STOPBITS_ONE,
-                                        timeout=1,
+                                        timeout=0.3,
                                         xonxoff=0,
                                         rtscts=0
                                         )
@@ -142,9 +148,10 @@ def send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd=0):
                 result_value[-1][1] = 5
                 result_value[-1][2] = 0
             # 在服务器端实现控制指令的参数功能
+            '''
             if arg_of_cmd > 0:
                 time.sleep(arg_of_cmd)
-
+            '''
             '''
             if cmd_type == "info":
                 response = serial_handler.read(32)
@@ -161,17 +168,16 @@ def send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd=0):
 
 if __name__ == '__main__':
     '''单元测试'''
-    
-    send_cmd('info', 'all')
+    send_cmd(encode_cmd('info', 'all'))
     time.sleep(1)
-    send_cmd('run', '1')
+    send_cmd(encode_cmd('run', '1'))
     time.sleep(2)
-    send_cmd('backward', '1')
+    send_cmd(encode_cmd('backward', '1'))
     time.sleep(2)
-    send_cmd('forward', '1')
+    send_cmd(encode_cmd('forward', '1'))
     time.sleep(2)
-    send_cmd('turnLeft', '1')
+    send_cmd(encode_cmd('turnLeft', '1'))
     time.sleep(2)
-    send_cmd('turnRight', '1')
+    send_cmd(encode_cmd('turnRight', '1'))
     time.sleep(2)
-    send_cmd('stop', '1')
+    send_cmd(encode_cmd('stop', '1'))

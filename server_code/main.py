@@ -4,6 +4,7 @@ import re
 import time
 import random
 import json
+import sys
 
 import tornado.ioloop
 import tornado.web
@@ -14,6 +15,23 @@ import operate_serial
 class basic_handler(tornado.web.RequestHandler):
     
     session_id = None
+
+    def convert_results(self, results):
+        results_str = ""
+        for result in results:
+            status = ""
+            if result[2] == 0:
+                status = "发送失败。 "
+            else:
+                status = "发送成功。 "
+            num_of_try = "尝试%d次;  "%result[1]
+            number_of_robot = int(result[0][0:2])
+            cmd = operate_serial.CODE_CMD[result[0][3]]
+            if result[0][2] != '0':
+                cmd = operate_serial.CODE_CMD[result[0][2:4]]
+            cmd_and_robot = "指令:%s, 机器人:%s;  " %(cmd, number_of_robot)
+            results_str += cmd_and_robot + num_of_try + status + "<br />"
+        return results_str
 
 
 class main_handler(basic_handler):
@@ -39,7 +57,13 @@ class main_handler(basic_handler):
         encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, target)
         results = operate_serial.send_cmd(encoded_cmd_list, cmd_type)
         if type(results) == type(list()):
-            self.write(json.dumps(results))
+            max_try = 0
+            for result in results:
+                if result[2] == 0:
+                    max_try += 5
+                else:
+                    max_try += result[1] - 1
+            self.write(self.convert_results(results) + '-' + str(max_try))
         else:
             self.write(results)
 
@@ -52,22 +76,30 @@ class detail_cmd_handler(basic_handler):
         arg_of_cmd = 0
 
         cmd = self.get_argument("command").strip().lower()
-        args = self.get_argument("args").strip().lower()
+        arg_of_cmd = self.get_argument("args").strip().lower()
         target = self.get_argument("target").strip().lower().encode('utf-8')
-        if args != "":
-            arg_of_cmd = int(args)
-        if arg_of_cmd > 99:
-            err_msg += "时间参数应小于100"
+        arg = 0
+        if arg_of_cmd != "":
+            arg = int(arg_of_cmd)
+        if arg > 99 or arg < 0:
+            err_msg += "时间参数应大于0小于100"
             true_code = False
 
         print arg_of_cmd
         if true_code:
             print cmd, target
-            encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, target)
+            encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, target, arg_of_cmd)
             print encoded_cmd_list
-            results = operate_serial.send_cmd(encoded_cmd_list, cmd_type, arg_of_cmd)
+            results = operate_serial.send_cmd(encoded_cmd_list, cmd_type)
             if type(results) == type(list()):
-                 self.write(json.dumps(results))
+                max_try = 0
+                for result in results:
+                    if result[2] == 0:
+                        max_try += 5
+                    else:
+                        max_try += result[1] - 1
+                results_str = self.convert_results(results)
+                self.write(results_str + '-' + str(max_try))
             else:
                 self.write(results)
         else:
@@ -102,8 +134,8 @@ class handle_multi_cmds(basic_handler):
                 if second_part_list[0].strip() == "time":
                     arg_of_cmd = int(second_part_list[1].strip())
                     print arg_of_cmd
-                    if arg_of_cmd > 99:
-                        err_msg += "第%s条代码：时间参数应小于100" %(str(index+1), ) + "<br />"
+                    if arg_of_cmd > 99 or arg_of_cmd < 0:
+                        err_msg += "第%s条代码：时间参数应大于0小于100" %(str(index+1), ) + "<br />"
                         true_code = False
                     var_time_count += 1
                 elif second_part_list[0].strip() == "car":
@@ -123,8 +155,8 @@ class handle_multi_cmds(basic_handler):
                         err_msg += "第%s条代码重复出现参数time" % (str(index+1), ) + "<br />"
                     else:
                         arg_of_cmd = int(third_part_list[1].strip())
-                        if arg_of_cmd > 99:
-                            err_msg += "第%s条代码：时间参数应小于100"
+                        if arg_of_cmd > 99 or arg_of_cmd < 0:
+                            err_msg += "第%s条代码：时间参数应大于0小于100"
                             true_code = False
                         print arg_of_cmd
                         var_time_count += 1
@@ -149,7 +181,8 @@ class handle_multi_cmds(basic_handler):
             # 如果没有语法与逻辑错误，则逐条指令解析并发送
 
             results = ''
-
+            arg_of_cmd = ''
+            all_max_try = 0
             for ctr_cmd in cmd_list:
                 ctr_cmd = ctr_cmd.strip("\n")
                 cmd_parts = re.split(r'\s+', ctr_cmd)
@@ -167,13 +200,18 @@ class handle_multi_cmds(basic_handler):
                         arg_of_cmd = third_part_list[1].strip()
                     elif third_part_list[0].strip() == 'car':
                         target = third_part_list[1].strip()
-                encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, target)
-                result = operate_serial.send_cmd(encoded_cmd_list, cmd_type, int(arg_of_cmd))
+                encoded_cmd_list, cmd_type = operate_serial.encode_cmd(cmd, target, arg_of_cmd)
+                result = operate_serial.send_cmd(encoded_cmd_list, cmd_type)
                 if type(result) == type(list()):
-                    results += json.dumps(result)
+                    for r in result:
+                        if r[2] == 0:
+                            all_max_try += 5
+                        else:
+                            all_max_try = r[1] - 1
+                    results += self.convert_results(result)
                 else:
                     results += result + "<br />"
-            self.write(results)
+            self.write(results + '-' + str(all_max_try))
         else:
             self.write(err_msg)
 
@@ -205,5 +243,11 @@ application = tornado.web.Application([
 
 
 if __name__ == "__main__":
-    application.listen(8888)
-    tornado.ioloop.IOLoop.instance().start()
+
+    if len(sys.argv) < 2:
+        print "请输入机器人的数目".decode('utf-8').encode('gbk')
+    else:
+        operate_serial.init_version_dict(int(sys.argv[1]))
+        print operate_serial.version_dict
+        application.listen(8888)
+        tornado.ioloop.IOLoop.instance().start()

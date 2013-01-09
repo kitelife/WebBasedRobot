@@ -23,7 +23,8 @@ $(function() {
 				key: '基本控制'
 			}, {
 				values: second_time_records,
-				key: '精确控制'
+				key: '精确控制',
+				color: '#000'
 			}, {
 				values: third_time_records,
 				key: '批量指令'
@@ -57,9 +58,16 @@ $(function() {
 				} else {
 					ele.removeAttr("disabled");
 				}
-				$("#buttons-status").append(data);
 				var end_time = (new Date()).getTime();
-				first_time_records.push({x:first_time_records.length + 1, y:(end_time - begin_time) / 1000});
+				pos = data.indexOf('-');
+				time_for_tries = 0;
+				if(pos != -1){
+					max_try = data.slice(pos+1);
+					time_for_tries = parseInt(max_try) * 0.3;
+					data = data.slice(0,pos);
+				}
+				$("#buttons-status").append(data);
+				first_time_records.push({x:first_time_records.length + 1, y:(end_time - begin_time) / 1000 - time_for_tries});
 				//$("#time-statistics svg").empty();
 				graph_three_time_delay()
 			});
@@ -102,13 +110,20 @@ $(function() {
 					args: arguments,
 					target: targetnum
 				}, function(data) {
+					var end_time = (new Date()).getTime(),
+						time_for_tries = 0,
+						pos = data.indexOf('-');
+					if(pos != -1){
+						max_try = data.slice(pos+1);
+						time_for_tries = parseInt(max_try) * 0.3;
+						data = data.slice(0,pos);
+					}
 					if(data !== "true") {
 						$("#inputtexts-status").append(data);
 					}
 					ele.removeAttr("disabled");
-					var end_time = (new Date()).getTime();
-					second_time_records.push({x:second_time_records.length + 1, y:(end_time - begin_time) / 1000});
-					//$("#time-statistics svg").empty();
+					
+					second_time_records.push({x:second_time_records.length + 1, y:(end_time - begin_time) / 1000 - time_for_tries});
 					graph_three_time_delay()
 				});
 			}
@@ -126,11 +141,18 @@ $(function() {
 				$.post("/handlemulticmds", {
 					multicmds: multi_cmds
 				}, function(data) {
+					var end_time = (new Date()).getTime();
+					pos = data.indexOf('-');
+					time_for_tries = 0;
+					if(pos != -1){
+						max_try = data.slice(pos+1);
+						time_for_tries = parseInt(max_try) * 0.3;
+						data = data.slice(0,pos);
+					}
 					if(data !== "true") {
 						$("#textarea-status").append(data);
 					}
 					ele.removeAttr("disabled");
-					var end_time = (new Date()).getTime();
 					third_time_records.push({x: third_time_records.length + 1, y:(end_time - begin_time) / 1000});
 					//$("#time-statistics svg").empty();
 					graph_three_time_delay()
