@@ -7,18 +7,18 @@
 * 机器人端的硬件是一种自主设计的智能小车，机器人程序是基于硬件驱动库嵌入式C实现。
 
 系统结构图：
-![系统结构](https://github.com/youngsterxyf/WebBasedRobot/tree/master/server_code/static/img/sys-arch.png)
+![系统结构](https://raw.github.com/youngsterxyf/WebBasedRobot/master/server_code/static/img/sys-arch.png)
 
 用户控制台界面：
-![控制台界面](https://github.com/youngsterxyf/WebBasedRobot/tree/master/server_code/static/img/Web-Interface.png)
+![控制台界面](https://raw.github.com/youngsterxyf/WebBasedRobot/tree/master/server_code/static/img/Web-Interface.png)
 
 在上图的下半部分其实还有网络时延统计图：
 
-![网络时延统计图](https://github.com/youngsterxyf/WebBasedRobot/tree/master/server_code/static/img/NVD3.png)
+![网络时延统计图](https://raw.github.com/youngsterxyf/WebBasedRobot/tree/master/server_code/static/img/NVD3.png)
 
 智能小车机器人：
 
-![智能小车](https://github.com/youngsterxyf/WebBasedRobot/tree/master/server_code/static/img/robot-car.png)
+![智能小车](https://raw.github.com/youngsterxyf/WebBasedRobot/tree/master/server_code/static/img/robot-car.png)
 
 ## 相关链接：
 * NVD3.js: [http://nvd3.org/](http://nvd3.org/)
