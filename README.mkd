@@ -20,7 +20,7 @@
 
 ### 智能小车机器人
 
-![智能小车](https://raw.github.com/youngsterxyf/WebBasedRobot/master/server_code/static/img/robot-car.png)
+<img src="https://raw.github.com/youngsterxyf/WebBasedRobot/master/server_code/static/img/robot-car.png" width="445" height="360" alt="智能小车">
 
 ## 相关链接：
 * NVD3.js: [http://nvd3.org/](http://nvd3.org/)
