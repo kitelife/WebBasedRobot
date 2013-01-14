@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR ELF Linker V6.20.2.52620/W32 for ARM              07/Jan/2013  19:28:40 #
+# IAR ELF Linker V6.20.2.52620/W32 for ARM              09/Jan/2013  21:49:45 #
 # Copyright 2007-2011 IAR Systems AB.                                         #
 #                                                                             #
 #    Output file  =  C:\Documents and Settings\xiayf\×ÀÃæ\car_code\test\Debug #
@@ -60,7 +60,7 @@ __SystemLibrary = DLib
   .intvec            const    0x00000000    0xf0  startup.o [1]
                             - 0x000000f0    0xf0
 
-"P1":                                     0x1b44
+"P1":                                     0x1bc8
   .text              ro code  0x000000f0   0x6c0  nrf24l01.o [1]
   .text              ro code  0x000007b0   0x36c  sysctl.o [4]
   .text              ro code  0x00000b1c   0x1e0  gpio.o [4]
@@ -68,30 +68,30 @@ __SystemLibrary = DLib
   .text              ro code  0x00000d82    0x2e  copy_init3.o [5]
   .text              ro code  0x00000db0    0xe0  interrupt.o [4]
   .text              ro code  0x00000e90     0x8  cpu.o [4]
-  .text              ro code  0x00000e98   0x4ac  main.o [1]
-  .text              ro code  0x00001344    0x26  delay.o [1]
-  .text              ro code  0x0000136a    0x22  zero_init3.o [5]
-  .text              ro code  0x0000138c    0x94  led.o [1]
-  .text              ro code  0x00001420   0x25c  motor.o [1]
-  .text              ro code  0x0000167c    0x80  keys.o [1]
-  .text              ro code  0x000016fc   0x248  ISR.o [1]
-  .text              ro code  0x00001944     0x6  ABImemclr4.o [5]
-  .text              ro code  0x0000194a     0x6  startup.o [1]
-  .text              ro code  0x00001950   0x11c  adc.o [4]
-  .text              ro code  0x00001a6c    0x80  pwm.o [4]
-  .text              ro code  0x00001aec    0x4e  timer.o [4]
-  .text              ro code  0x00001b3c    0x38  ABImemset48.o [5]
-  .text              ro code  0x00001b74    0x2c  data_init3.o [5]
-  .iar.init_table    const    0x00001ba0    0x24  - Linker created -
-  .text              ro code  0x00001bc4    0x16  cmain.o [5]
-  .text              ro code  0x00001bda     0x4  low_level_init.o [3]
-  .text              ro code  0x00001bde     0x8  exit.o [3]
-  .text              ro code  0x00001be8     0xa  cexit.o [5]
-  .text              ro code  0x00001bf4    0x14  exit.o [6]
-  .text              ro code  0x00001c08     0xc  cstartup_M.o [5]
-  .rodata            const    0x00001c14     0x0  bwt_init3c.o [5]
-  Initializer bytes  ro data  0x00001c14    0x20  <for P2 s0>
-                            - 0x00001c34  0x1b44
+  .text              ro code  0x00000e98   0x530  main.o [1]
+  .text              ro code  0x000013c8    0x26  delay.o [1]
+  .text              ro code  0x000013ee    0x22  zero_init3.o [5]
+  .text              ro code  0x00001410    0x94  led.o [1]
+  .text              ro code  0x000014a4   0x25c  motor.o [1]
+  .text              ro code  0x00001700    0x80  keys.o [1]
+  .text              ro code  0x00001780   0x248  ISR.o [1]
+  .text              ro code  0x000019c8     0x6  ABImemclr4.o [5]
+  .text              ro code  0x000019ce     0x6  startup.o [1]
+  .text              ro code  0x000019d4   0x11c  adc.o [4]
+  .text              ro code  0x00001af0    0x80  pwm.o [4]
+  .text              ro code  0x00001b70    0x4e  timer.o [4]
+  .text              ro code  0x00001bc0    0x38  ABImemset48.o [5]
+  .text              ro code  0x00001bf8    0x2c  data_init3.o [5]
+  .iar.init_table    const    0x00001c24    0x24  - Linker created -
+  .text              ro code  0x00001c48    0x16  cmain.o [5]
+  .text              ro code  0x00001c5e     0x4  low_level_init.o [3]
+  .text              ro code  0x00001c62     0x8  exit.o [3]
+  .text              ro code  0x00001c6c     0xa  cexit.o [5]
+  .text              ro code  0x00001c78    0x14  exit.o [6]
+  .text              ro code  0x00001c8c     0xc  cstartup_M.o [5]
+  .rodata            const    0x00001c98     0x0  bwt_init3c.o [5]
+  Initializer bytes  ro data  0x00001c98    0x20  <for P2 s0>
+                            - 0x00001cb8  0x1bc8
 
 "P2", part 1 of 3:                          0x20
   P2 s0                       0x20000000    0x20  <Init block>
@@ -144,7 +144,7 @@ Zero (__iar_zero_init3)
 
 Copy (__iar_copy_init3)
     1 source range, total size 0x20:
-          0x00001c14   0x20
+          0x00001c98   0x20
     1 destination range, total size 0x20:
           0x20000000   0x20
 
@@ -160,12 +160,12 @@ C:\Documents and Settings\xiayf\×ÀÃæ\car_code\test\Debug\Obj: [1]
     delay.o                38
     keys.o                128
     led.o                 148
-    main.o              1 196       16       57
+    main.o              1 328       16       57
     motor.o               604        8       16
     nrf24l01.o          1 728        8    2 073
     startup.o               6      240    1 024
     -------------------------------------------
-    Total:              4 432      272    3 177
+    Total:              4 564      272    3 177
 
 command line: [2]
     -------------------------------------------
@@ -210,7 +210,7 @@ shb_l.a: [6]
     Gaps                    6
     Linker created                  36
 -----------------------------------------------
-    Grand Total:        6 912      308    3 177
+    Grand Total:        7 044      308    3 177
 
 
 *******************************************************************************
@@ -219,21 +219,21 @@ shb_l.a: [6]
 
 Entry                      Address   Size  Type      Object
 -----                      -------   ----  ----      ------
-?main                   0x00001bc5         Code  Gb  cmain.o [5]
+?main                   0x00001c49         Code  Gb  cmain.o [5]
 ADCHardwareOversampleConfigure
-                        0x00001a55    0xe  Code  Gb  adc.o [4]
-ADCInit                 0x000012b5   0x38  Code  Gb  main.o [1]
-ADCIntClear             0x0000197b    0xa  Code  Gb  adc.o [4]
-ADCIntStatus            0x00001951   0x2a  Code  Gb  adc.o [4]
-ADCProcessorTrigger     0x00001a41   0x14  Code  Gb  adc.o [4]
-ADCSequenceConfigure    0x0000198b   0x30  Code  Gb  adc.o [4]
-ADCSequenceDataGet      0x00001a23   0x1e  Code  Gb  adc.o [4]
-ADCSequenceEnable       0x00001985    0x6  Code  Gb  adc.o [4]
+                        0x00001ad9    0xe  Code  Gb  adc.o [4]
+ADCInit                 0x00001337   0x38  Code  Gb  main.o [1]
+ADCIntClear             0x000019ff    0xa  Code  Gb  adc.o [4]
+ADCIntStatus            0x000019d5   0x2a  Code  Gb  adc.o [4]
+ADCProcessorTrigger     0x00001ac5   0x14  Code  Gb  adc.o [4]
+ADCSequenceConfigure    0x00001a0f   0x30  Code  Gb  adc.o [4]
+ADCSequenceDataGet      0x00001aa7   0x1e  Code  Gb  adc.o [4]
+ADCSequenceEnable       0x00001a09    0x6  Code  Gb  adc.o [4]
 ADCSequenceStepConfigure
-                        0x000019bb   0x5e  Code  Gb  adc.o [4]
+                        0x00001a3f   0x5e  Code  Gb  adc.o [4]
 CPUcpsie                0x00000e91    0x8  Code  Gb  cpu.o [4]
 DelayTime               0x20000850    0x4  Data  Gb  ISR.o [1]
-FaultISR                0x0000194d    0x2  Code  Lc  startup.o [1]
+FaultISR                0x000019d1    0x2  Code  Lc  startup.o [1]
 GPIODirModeSet          0x00000b1d   0x28  Code  Gb  gpio.o [4]
 GPIOIntTypeSet          0x00000b45   0x38  Code  Gb  gpio.o [4]
 GPIOPadConfigSet        0x00000b7d   0x98  Code  Gb  gpio.o [4]
@@ -245,13 +245,13 @@ GPIOPinRead             0x00000c37    0x6  Code  Gb  gpio.o [4]
 GPIOPinTypePWM          0x00000c51    0xa  Code  Gb  gpio.o [4]
 GPIOPinTypeSSI          0x00000c5b    0xa  Code  Gb  gpio.o [4]
 GPIOPinWrite            0x00000c3d    0x6  Code  Gb  gpio.o [4]
-GPIO_Port_A_ISR         0x00001741   0x3e  Code  Gb  ISR.o [1]
-GPIO_Port_B_ISR         0x0000177f   0xfe  Code  Gb  ISR.o [1]
-GPIO_Port_C_ISR         0x00001895   0x36  Code  Gb  ISR.o [1]
-GPIO_Port_D_ISR         0x000018d7   0x16  Code  Gb  ISR.o [1]
-GPIO_Port_G_ISR         0x000018ed   0x16  Code  Gb  ISR.o [1]
-GPIO_Port_H_ISR         0x0000187d    0x2  Code  Gb  ISR.o [1]
-IntDefaultHandler       0x0000194f    0x2  Code  Lc  startup.o [1]
+GPIO_Port_A_ISR         0x000017c5   0x3e  Code  Gb  ISR.o [1]
+GPIO_Port_B_ISR         0x00001803   0xfe  Code  Gb  ISR.o [1]
+GPIO_Port_C_ISR         0x00001919   0x36  Code  Gb  ISR.o [1]
+GPIO_Port_D_ISR         0x0000195b   0x16  Code  Gb  ISR.o [1]
+GPIO_Port_G_ISR         0x00001971   0x16  Code  Gb  ISR.o [1]
+GPIO_Port_H_ISR         0x00001901    0x2  Code  Gb  ISR.o [1]
+IntDefaultHandler       0x000019d3    0x2  Code  Lc  startup.o [1]
 IntEnable               0x00000ddf   0x4e  Code  Gb  interrupt.o [4]
 IntMasterEnable         0x00000db1    0xa  Code  Gb  interrupt.o [4]
 IntPrioritySet          0x00000dbb   0x24  Code  Gb  interrupt.o [4]
@@ -268,19 +268,19 @@ NRF24L01_RxPacket       0x0000057b   0x48  Code  Gb  nrf24l01.o [1]
 NRF24L01_TxPacket       0x000004f7   0x84  Code  Gb  nrf24l01.o [1]
 NRF24L01_Write_Buf      0x00000481   0x76  Code  Gb  nrf24l01.o [1]
 NRF24L01_Write_Reg      0x00000331   0x68  Code  Gb  nrf24l01.o [1]
-NmiSR                   0x0000194b    0x2  Code  Lc  startup.o [1]
+NmiSR                   0x000019cf    0x2  Code  Lc  startup.o [1]
 P0_RX_ADDRESS           0x20000014    0x4  Data  Gb  nrf24l01.o [1]
 P0_TX_ADDRESS           0x20000010    0x4  Data  Gb  nrf24l01.o [1]
-PWMGenConfigure         0x00001a6d   0x2c  Code  Gb  pwm.o [4]
-PWMGenEnable            0x00001ab1    0x6  Code  Gb  pwm.o [4]
-PWMGenPeriodSet         0x00001a9d   0x14  Code  Gb  pwm.o [4]
-PWMOutputState          0x00001adb   0x12  Code  Gb  pwm.o [4]
-PWMPulseWidthSet        0x00001ab7   0x1c  Code  Gb  pwm.o [4]
+PWMGenConfigure         0x00001af1   0x2c  Code  Gb  pwm.o [4]
+PWMGenEnable            0x00001b35    0x6  Code  Gb  pwm.o [4]
+PWMGenPeriodSet         0x00001b21   0x14  Code  Gb  pwm.o [4]
+PWMOutputState          0x00001b5f   0x12  Code  Gb  pwm.o [4]
+PWMPulseWidthSet        0x00001b3b   0x1c  Code  Gb  pwm.o [4]
 RX_Mode                 0x000005c3   0x9a  Code  Gb  nrf24l01.o [1]
-Region$$Table$$Base     0x00001ba0          --   Gb  - Linker created -
-Region$$Table$$Limit    0x00001bc4          --   Gb  - Linker created -
+Region$$Table$$Base     0x00001c24          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00001c48          --   Gb  - Linker created -
 RightMotorStep          0x20000860    0x4  Data  Gb  motor.o [1]
-SB                      0x00001c14         Data  Gb  bwt_init3c.o [5]
+SB                      0x00001c98         Data  Gb  bwt_init3c.o [5]
 SSIBusy                 0x00000d77    0xc  Code  Gb  ssi.o [4]
 SSIConfigSetExpClk      0x00000cfd   0x46  Code  Gb  ssi.o [4]
 SSIDataGet              0x00000d59    0xc  Code  Gb  ssi.o [4]
@@ -297,30 +297,30 @@ SysCtlPWMClockSet       0x00000a47    0xa  Code  Gb  sysctl.o [4]
 SysCtlPeripheralEnable  0x000007b1    0x8  Code  Gb  sysctl.o [4]
 TX_Mode                 0x0000065d   0x86  Code  Gb  nrf24l01.o [1]
 TestNum                 0x20000867    0x1  Data  Gb  main.o [1]
-Timer0A_ISR             0x0000187f   0x16  Code  Gb  ISR.o [1]
-Timer1A_ISR             0x000018cb    0xc  Code  Gb  ISR.o [1]
-TimerConfigure          0x00001af9   0x1e  Code  Gb  timer.o [4]
-TimerEnable             0x00001aed    0xc  Code  Gb  timer.o [4]
-TimerIntClear           0x00001b37    0x4  Code  Gb  timer.o [4]
-TimerIntEnable          0x00001b2d    0x4  Code  Gb  timer.o [4]
-TimerLoadSet            0x00001b17   0x12  Code  Gb  timer.o [4]
-__aeabi_memclr4         0x00001945         Code  Gb  ABImemclr4.o [5]
-__aeabi_memset4         0x00001b3d         Code  Gb  ABImemset48.o [5]
-__aeabi_memset8         0x00001b3d         Code  Gb  ABImemset48.o [5]
-__cmain                 0x00001bc5         Code  Gb  cmain.o [5]
-__exit                  0x00001bf5   0x14  Code  Gb  exit.o [6]
-__iar_Memset4_word      0x00001b45         Code  Gb  ABImemset48.o [5]
-__iar_Memset8_word      0x00001b45         Code  Gb  ABImemset48.o [5]
+Timer0A_ISR             0x00001903   0x16  Code  Gb  ISR.o [1]
+Timer1A_ISR             0x0000194f    0xc  Code  Gb  ISR.o [1]
+TimerConfigure          0x00001b7d   0x1e  Code  Gb  timer.o [4]
+TimerEnable             0x00001b71    0xc  Code  Gb  timer.o [4]
+TimerIntClear           0x00001bbb    0x4  Code  Gb  timer.o [4]
+TimerIntEnable          0x00001bb1    0x4  Code  Gb  timer.o [4]
+TimerLoadSet            0x00001b9b   0x12  Code  Gb  timer.o [4]
+__aeabi_memclr4         0x000019c9         Code  Gb  ABImemclr4.o [5]
+__aeabi_memset4         0x00001bc1         Code  Gb  ABImemset48.o [5]
+__aeabi_memset8         0x00001bc1         Code  Gb  ABImemset48.o [5]
+__cmain                 0x00001c49         Code  Gb  cmain.o [5]
+__exit                  0x00001c79   0x14  Code  Gb  exit.o [6]
+__iar_Memset4_word      0x00001bc9         Code  Gb  ABImemset48.o [5]
+__iar_Memset8_word      0x00001bc9         Code  Gb  ABImemset48.o [5]
 __iar_copy_init3        0x00000d83   0x2e  Code  Gb  copy_init3.o [5]
-__iar_data_init3        0x00001b75   0x2c  Code  Gb  data_init3.o [5]
-__iar_program_start     0x00001c09         Code  Gb  cstartup_M.o [5]
-__iar_zero_init3        0x0000136b   0x22  Code  Gb  zero_init3.o [5]
-__low_level_init        0x00001bdb    0x4  Code  Gb  low_level_init.o [3]
+__iar_data_init3        0x00001bf9   0x2c  Code  Gb  data_init3.o [5]
+__iar_program_start     0x00001c8d         Code  Gb  cstartup_M.o [5]
+__iar_zero_init3        0x000013ef   0x22  Code  Gb  zero_init3.o [5]
+__low_level_init        0x00001c5f    0x4  Code  Gb  low_level_init.o [3]
 __vector_table          0x00000000   0xf0  Data  Gb  startup.o [1]
-_call_main              0x00001bd1         Code  Gb  cmain.o [5]
-_exit                   0x00001be9         Code  Gb  cexit.o [5]
-_main                   0x00001bd7         Code  Gb  cmain.o [5]
-backward                0x00001579   0x2c  Code  Gb  motor.o [1]
+_call_main              0x00001c55         Code  Gb  cmain.o [5]
+_exit                   0x00001c6d         Code  Gb  cexit.o [5]
+_main                   0x00001c5b         Code  Gb  cmain.o [5]
+backward                0x000015fd   0x2c  Code  Gb  motor.o [1]
 backward_cmd            0x2000001c    0x1  Data  Gb  main.o [1]
 banlanceL               0x20000008    0x4  Data  Gb  motor.o [1]
 banlanceR               0x2000000c    0x4  Data  Gb  motor.o [1]
@@ -328,11 +328,11 @@ banlance_l              0x20000000    0x4  Data  Gb  main.o [1]
 banlance_r              0x20000004    0x4  Data  Gb  main.o [1]
 car_num                 0x20000018    0x1  Data  Gb  main.o [1]
 delay                   0x00000ed9    0xa  Code  Gb  main.o [1]
-delay_1ms               0x00001345    0xe  Code  Gb  delay.o [1]
-delay_ms                0x00001353   0x18  Code  Gb  delay.o [1]
-detectVoltage           0x0000122b   0x8a  Code  Gb  main.o [1]
-exit                    0x00001bdf    0x8  Code  Gb  exit.o [3]
-forward                 0x0000154d   0x2c  Code  Gb  motor.o [1]
+delay_1ms               0x000013c9    0xe  Code  Gb  delay.o [1]
+delay_ms                0x000013d7   0x18  Code  Gb  delay.o [1]
+detectVoltage           0x000012ad   0x8a  Code  Gb  main.o [1]
+exit                    0x00001c63    0x8  Code  Gb  exit.o [3]
+forward                 0x000015d1   0x2c  Code  Gb  motor.o [1]
 forward_cmd             0x2000001b    0x1  Data  Gb  main.o [1]
 g_pulGPIOBaseAddrs      0x00000cb4   0x48  Data  Lc  gpio.o [4]
 g_pulRCGCRegs           0x00000ab4    0xc  Data  Lc  sysctl.o [4]
@@ -341,29 +341,29 @@ g_pulXtals              0x00000ac0   0x5c  Data  Lc  sysctl.o [4]
 info_cmd                0x20000019    0x1  Data  Gb  main.o [1]
 initControlPins0        0x000001ed   0x66  Code  Gb  nrf24l01.o [1]
 initControlPins1        0x00000253   0x80  Code  Gb  nrf24l01.o [1]
-initKey                 0x0000167d   0x38  Code  Gb  keys.o [1]
-initLed                 0x0000138d   0x3c  Code  Gb  led.o [1]
-initMotor               0x00001421   0xa8  Code  Gb  motor.o [1]
+initKey                 0x00001701   0x38  Code  Gb  keys.o [1]
+initLed                 0x00001411   0x3c  Code  Gb  led.o [1]
+initMotor               0x000014a5   0xa8  Code  Gb  motor.o [1]
 initNrf24l01            0x000002d3   0x38  Code  Gb  nrf24l01.o [1]
-initPWM                 0x000014c9   0x84  Code  Gb  motor.o [1]
+initPWM                 0x0000154d   0x84  Code  Gb  motor.o [1]
 initSSI0                0x000000f1   0x7e  Code  Gb  nrf24l01.o [1]
 initSSI1                0x0000016f   0x7e  Code  Gb  nrf24l01.o [1]
-initSW                  0x000016b5   0x38  Code  Gb  keys.o [1]
-initTimer               0x000016fd   0x44  Code  Gb  ISR.o [1]
+initSW                  0x00001739   0x38  Code  Gb  keys.o [1]
+initTimer               0x00001781   0x44  Code  Gb  ISR.o [1]
 last_version            0x20000854    0x4  Data  Gb  main.o [1]
-ledTurnoff              0x000013d9   0x10  Code  Gb  led.o [1]
-ledTurnon               0x000013c9   0x10  Code  Gb  led.o [1]
-ledTurnover             0x000013e9   0x26  Code  Gb  led.o [1]
-main                    0x00000ee3  0x348  Code  Gb  main.o [1]
+ledTurnoff              0x0000145d   0x10  Code  Gb  led.o [1]
+ledTurnon               0x0000144d   0x10  Code  Gb  led.o [1]
+ledTurnover             0x0000146d   0x26  Code  Gb  led.o [1]
+main                    0x00000ee3  0x3ca  Code  Gb  main.o [1]
 pulStack                0x2000086c  0x400  Data  Lc  startup.o [1]
 receive                 0x20000824   0x20  Data  Gb  main.o [1]
 run_cmd                 0x2000001a    0x1  Data  Gb  main.o [1]
-stop                    0x000015a5   0x2c  Code  Gb  motor.o [1]
+stop                    0x00001629   0x2c  Code  Gb  motor.o [1]
 stop_cmd                0x2000001f    0x1  Data  Gb  main.o [1]
 sysInit                 0x00000e99   0x10  Code  Gb  main.o [1]
-turn                    0x000015d1   0x2c  Code  Gb  motor.o [1]
-turnLeft                0x000015fd   0x2c  Code  Gb  motor.o [1]
-turnRight               0x00001629   0x2c  Code  Gb  motor.o [1]
+turn                    0x00001655   0x2c  Code  Gb  motor.o [1]
+turnLeft                0x00001681   0x2c  Code  Gb  motor.o [1]
+turnRight               0x000016ad   0x2c  Code  Gb  motor.o [1]
 turnleft_cmd            0x2000001d    0x1  Data  Gb  main.o [1]
 turnright_cmd           0x2000001e    0x1  Data  Gb  main.o [1]
 ulDataRx                0x20000844    0xc  Data  Gb  nrf24l01.o [1]
@@ -377,7 +377,7 @@ x                       0x20000858    0x4  Data  Gb  main.o [1]
 [5] = rt7M_tl.a
 [6] = shb_l.a
 
-  6 912 bytes of readonly  code memory
+  7 044 bytes of readonly  code memory
     308 bytes of readonly  data memory
   3 177 bytes of readwrite data memory
 

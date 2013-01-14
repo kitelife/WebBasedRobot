@@ -6,80 +6,86 @@
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$PROJ_DIR$\src\key_led_test.c</file>
-      <file>$PROJ_DIR$\..\..\hardware test\LM3S.icf</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\walk_test.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\led.pbi</file>
-      <file>$PROJ_DIR$\src\motor.h</file>
       <file>$PROJ_DIR$\src\wireless_comm_test.c</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\ewarm\Exe\driverlib.a</file>
-      <file>$PROJ_DIR$\src\keys.h</file>
-      <file>$PROJ_DIR$\src\delay.h</file>
-      <file>$PROJ_DIR$\src\wireless_comm_test.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\systick.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\inc\hw_gpio.h</file>
       <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\timer.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\walk_test.o</file>
       <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\ISR.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\infraredkey.o</file>
       <file>$PROJ_DIR$\src\infraredkey.h</file>
       <file>$PROJ_DIR$\Debug\Obj\test.pbd</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\flash.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\nrf24l01.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\walk_test.o</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\debug.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\startup.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\motor.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\motor_encoder_test.o</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\ISR.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\key_led_test.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\wireless_comm_test.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\key_led_test.pbi</file>
-      <file>$PROJ_DIR$\src\key_led_test.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\inc\hw_types.h</file>
-      <file>$PROJ_DIR$\src\ISR.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\sysctl.h</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
       <file>$PROJ_DIR$\Debug\Obj\startup.o</file>
       <file>$PROJ_DIR$\Debug\Obj\delay.pbi</file>
-      <file>$PROJ_DIR$\src\motor_encoder_test.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\nrf24l01.o</file>
-      <file>$PROJ_DIR$\src\baselib.h</file>
       <file>$PROJ_DIR$\Debug\Exe\car1021.bin</file>
       <file>$PROJ_DIR$\Debug\Exe\car1021.out</file>
-      <file>$PROJ_DIR$\Debug\Obj\wireless_comm_test.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\led.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\motor_encoder_test.pbi</file>
-      <file>$PROJ_DIR$\src\walk_test.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\uart.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\motor.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\infraredkey.pbi</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\gpio.h</file>
+      <file>$PROJ_DIR$\src\wireless_comm_test.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
       <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-      <file>$PROJ_DIR$\src\nrf24l01.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\inc\hw_ints.h</file>
+      <file>$PROJ_DIR$\src\keys.h</file>
       <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\inc\hw_ints.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\nrf24l01.o</file>
       <file>$PROJ_DIR$\Debug\Obj\keys.pbi</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\adc.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\keys.o</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\inc\hw_memmap.h</file>
+      <file>$PROJ_DIR$\src\delay.h</file>
+      <file>$PROJ_DIR$\src\walk_test.c</file>
+      <file>$PROJ_DIR$\src\key_led_test.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\ISR.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\key_led_test.pbi</file>
+      <file>$PROJ_DIR$\src\nrf24l01.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\inc\hw_types.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\infraredkey.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\ewarm\Exe\driverlib.a</file>
+      <file>$PROJ_DIR$\src\motor_encoder_test.c</file>
       <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\inc\hw_nvic.h</file>
       <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
-      <file>$PROJ_DIR$\Debug\List\car1021.map</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\inc\hw_gpio.h</file>
-      <file>$PROJ_DIR$\src\led.h</file>
-      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
-      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\keys.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\key_led_test.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\inc\hw_memmap.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\wireless_comm_test.pbi</file>
       <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\Pwm.h</file>
       <file>$PROJ_DIR$\src\motor_encoder_test.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\infraredkey.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\ISR.o</file>
-      <file>$PROJ_DIR$\src\walk_test.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\wireless_comm_test.o</file>
+      <file>$PROJ_DIR$\src\led.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\led.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\motor_encoder_test.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\walk_test.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\interrupt.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\nrf24l01.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\systick.h</file>
+      <file>$PROJ_DIR$\Debug\List\car1021.map</file>
+      <file>$PROJ_DIR$\src\walk_test.h</file>
+      <file>$PROJ_DIR$\src\key_led_test.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\flash.h</file>
+      <file>$PROJ_DIR$\src\ISR.h</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\..\..\hardware test\LM3S.icf</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\ssi.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\adc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\debug.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup.pbi</file>
+      <file>$PROJ_DIR$\src\baselib.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\motor.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\led.pbi</file>
+      <file>$PROJ_DIR$\src\motor.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\src\baseheadfile.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\motor.o</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\uart.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\sysctl.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\motor_encoder_test.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\gpio.h</file>
       <file>$PROJ_DIR$\src\infraredkey.c</file>
       <file>$PROJ_DIR$\src\delay.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\delay.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
       <file>$PROJ_DIR$\src\ISR.c</file>
       <file>$PROJ_DIR$\src\keys.c</file>
       <file>$PROJ_DIR$\src\led.c</file>
@@ -87,19 +93,119 @@
       <file>$PROJ_DIR$\src\motor.c</file>
       <file>$PROJ_DIR$\src\nrf24l01.c</file>
       <file>$PROJ_DIR$\src\startup.c</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\interrupt.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-      <file>$PROJ_DIR$\src\baseheadfile.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\StellarisWare\driverlib\ssi.h</file>
-      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
-      <file>$PROJ_DIR$\Debug\Obj\delay.o</file>
     </outputs>
+    <file>
+      <name>$PROJ_DIR$\src\wireless_comm_test.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 43</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 15 29 39 30 49 20 62 23 75 60 72 44 69 34 56</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15 29 39 30 49 20 62 23 75 60 72 44 69 34 56</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\test.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 27 12 31 28 22 66 79 65 73 50 63 48 40</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\car1021.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 53</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 59 6 78 7 37 36 45 5 70 46 21 11 4 43 32 17 10 16 58</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\walk_test.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 4</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 54 29 39 30 49 20 62 23 75 60 72 67 41</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 54 29 39 30 49 20 62 23 75 60 72 67 41</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 14 53</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\motor_encoder_test.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 42 29 39 30 49 20 62 23 75 60 72 67 41 44 69 34 56 35 1 68 74 38 47 26 51 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42 29 39 30 49 20 62 23 75 60 72 67 41 44 69 34 56 35 1 68 74 47 26 51 19</file>
+        </tool>
+      </inputs>
+    </file>
     <file>
       <name>$PROJ_DIR$\src\key_led_test.c</name>
       <outputs>
         <tool>
           <name>ICCARM</name>
-          <file> 26</file>
+          <file> 37</file>
         </tool>
         <tool>
           <name>BICOMP</name>
@@ -109,20 +215,66 @@
       <inputs>
         <tool>
           <name>ICCARM</name>
-          <file> 29 63 83 30 58 51 59 32 47 81 17 9 10 56</file>
+          <file> 25 44 69 30 39 20 34 72 75 49 56 18 23 61</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 29 63 83 30 58 51 59 32 47 81 17 9 10 56</file>
+          <file> 25 44 69 30 39 20 34 72 75 49 56 18 23 61</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\src\wireless_comm_test.c</name>
+      <name>$PROJ_DIR$\src\infraredkey.c</name>
       <outputs>
         <tool>
           <name>ICCARM</name>
-          <file> 40</file>
+          <file> 7</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 30 3 8 29 39 49 20 62 23 75 60 72</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30 3 8 29 39 49 20 62 23 75 60 72</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\delay.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 78</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 23</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\ISR.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 6</file>
         </tool>
         <tool>
           <name>BICOMP</name>
@@ -132,163 +284,11 @@
       <inputs>
         <tool>
           <name>ICCARM</name>
-          <file> 11 50 58 30 81 51 20 10 47 84 32 63 83 59 17</file>
+          <file> 57 64 30 39 20 34 2 49 72 52 75 71 3 62 60 56 23 29 44 69 67 41 18 61</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 11 50 58 30 81 51 20 10 47 84 32 63 83 59 17</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>[ROOT_NODE]</name>
-      <outputs>
-        <tool>
-          <name>ILINK</name>
-          <file> 39 61</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Obj\test.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 25 34 46 28 55 5 54 22 42 18 21 4 27</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\motor_encoder_test.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 23</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 42</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 67 50 58 30 81 51 20 10 47 84 32 6 66 63 83 59 17 60 68 82 49 24 2 53 3 52</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 67 50 58 30 81 51 20 10 47 84 32 6 66 63 83 59 17 60 68 82 49 2 53 3 52</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\car1021.out</name>
-      <outputs>
-        <tool>
-          <name>ILINK</name>
-          <file> 61</file>
-        </tool>
-        <tool>
-          <name>OBJCOPY</name>
-          <file> 38</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ILINK</name>
-          <file> 1 70 86 69 26 57 41 14 45 23 36 33 19 40 8 48 64 85 65</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\walk_test.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 19</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 4</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 43 50 58 30 81 51 20 10 47 84 32 6 66</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 43 50 58 30 81 51 20 10 47 84 32 6 66</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\infraredkey.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 69</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 46</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 30 13 15 50 58 81 51 20 10 47 84 32</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 30 13 15 50 58 81 51 20 10 47 84 32</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\delay.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 86</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 34</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 10</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 10</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\ISR.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 70</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 25</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 31 37 30 58 51 59 62 81 32 12 47 44 13 20 84 17 10 50 63 83 6 66 9 56</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 31 37 30 58 51 59 62 81 32 12 47 44 13 20 84 17 10 50 63 83 6 66 9 56</file>
+          <file> 57 64 30 39 20 34 2 49 72 52 75 71 3 62 60 56 23 29 44 69 67 41 18 61</file>
         </tool>
       </inputs>
     </file>
@@ -297,76 +297,7 @@
       <outputs>
         <tool>
           <name>ICCARM</name>
-          <file> 57</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 55</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 37 30 58 51 59 62 81 32 12 47 44 13 20 84 17 9 10 56</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 37 30 58 51 59 62 81 32 12 47 44 13 20 84 17 9 10 56</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\led.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 41</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 5</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 63 83 30 58 51 59 32 47 81 17</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 63 83 30 58 51 59 32 47 81 17</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\main.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 14</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 54</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 37 30 58 51 59 62 81 32 12 47 44 13 20 84 17 10 50 63 83 6 66 9 56 31 29 11 43 67</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 37 30 58 51 59 62 81 32 12 47 44 13 20 84 17 10 50 63 83 6 66 9 56 31 29 11 43 67</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\motor.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 45</file>
+          <file> 36</file>
         </tool>
         <tool>
           <name>BICOMP</name>
@@ -376,11 +307,80 @@
       <inputs>
         <tool>
           <name>ICCARM</name>
-          <file> 6 66 30 63 83 58 51 59 32 47 81 17</file>
+          <file> 64 30 39 20 34 2 49 72 52 75 71 3 62 60 56 18 23 61</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 6 66 30 63 83 58 51 59 32 47 81 17</file>
+          <file> 64 30 39 20 34 2 49 72 52 75 71 3 62 60 56 18 23 61</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\led.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 45</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 44 69 30 39 20 34 72 75 49 56</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44 69 30 39 20 34 72 75 49 56</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 5</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 64 30 39 20 34 2 49 72 52 75 71 3 62 60 56 23 29 44 69 67 41 18 61 57 25 15 54 42</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 64 30 39 20 34 2 49 72 52 75 71 3 62 60 56 23 29 44 69 67 41 18 61 57 25 15 54 42</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\motor.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 70</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 67 41 30 44 69 39 20 34 72 75 49 56</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 67 41 30 44 69 39 20 34 72 75 49 56</file>
         </tool>
       </inputs>
     </file>
@@ -389,21 +389,21 @@
       <outputs>
         <tool>
           <name>ICCARM</name>
-          <file> 36</file>
+          <file> 21</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 18</file>
+          <file> 50</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
-          <file> 50 58 30 81 51 20 10 47 84 32</file>
+          <file> 29 39 30 49 20 62 23 75 60 72</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 50 58 30 81 51 20 10 47 84 32</file>
+          <file> 29 39 30 49 20 62 23 75 60 72</file>
         </tool>
       </inputs>
     </file>
@@ -412,11 +412,11 @@
       <outputs>
         <tool>
           <name>ICCARM</name>
-          <file> 33</file>
+          <file> 11</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 21</file>
+          <file> 63</file>
         </tool>
       </outputs>
     </file>
@@ -424,109 +424,49 @@
   <configuration>
     <name>Release</name>
     <outputs>
-      <file>$PROJ_DIR$\Release\Obj\car1021.pbd</file>
-      <file>$PROJ_DIR$\src\motor.h</file>
       <file>$PROJ_DIR$\Release\Obj\lcd.pbi</file>
-      <file>$PROJ_DIR$\Release\Obj\infrared.pbi</file>
       <file>$PROJ_DIR$\Release\Exe\car1021.out</file>
-      <file>$PROJ_DIR$\src\main.c</file>
-      <file>$PROJ_DIR$\src\motor.c</file>
-      <file>$PROJ_DIR$\src\startup.c</file>
-      <file>$PROJ_DIR$\src\lcd.h</file>
-      <file>$PROJ_DIR$\Release\Obj\startup.o</file>
-      <file>$PROJ_DIR$\Release\Obj\startup.pbi</file>
       <file>$PROJ_DIR$\src\main.h</file>
       <file>$PROJ_DIR$\src\lcd.c</file>
       <file>$PROJ_DIR$\Release\Obj\motor.pbi</file>
       <file>$PROJ_DIR$\Release\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\car1021.pbd</file>
       <file>$PROJ_DIR$\src\infrared.h</file>
       <file>$PROJ_DIR$\src\infrared.c</file>
+      <file>$PROJ_DIR$\Release\Obj\infrared.pbi</file>
+      <file>$PROJ_DIR$\src\lcd.h</file>
+      <file>$PROJ_DIR$\Release\Obj\startup.o</file>
+      <file>$PROJ_DIR$\Release\Obj\startup.pbi</file>
+      <file>$PROJ_DIR$\src\motor.h</file>
+      <file>$PROJ_DIR$\src\main.c</file>
+      <file>$PROJ_DIR$\src\motor.c</file>
+      <file>$PROJ_DIR$\src\startup.c</file>
     </outputs>
-    <file>
-      <name>$PROJ_DIR$\Release\Obj\car1021.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 3 2 14 13 10</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>[ROOT_NODE]</name>
-      <outputs>
-        <tool>
-          <name>ILINK</name>
-          <file> 4</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\main.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 14</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 11 8</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 11 8 1 15</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\motor.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 13</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 1 8</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 1 8</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\startup.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 9</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 10</file>
-        </tool>
-      </outputs>
-    </file>
     <file>
       <name>$PROJ_DIR$\src\lcd.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 2</file>
+          <file> 0</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
-          <file> 8</file>
+          <file> 10</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 8</file>
+          <file> 10</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Release\Obj\car1021.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 9 0 5 4 12</file>
         </tool>
       </inputs>
     </file>
@@ -535,19 +475,79 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 3</file>
+          <file> 9</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
-          <file> 15 8</file>
+          <file> 7 10</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 15 8</file>
+          <file> 7 10</file>
         </tool>
       </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 1</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 5</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 2 10</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2 10 13 7</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\motor.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 13 10</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13 10</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\startup.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
     </file>
     <forcedrebuild>
       <name>[MULTI_TOOL]</name>

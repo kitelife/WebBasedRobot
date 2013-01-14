@@ -114,13 +114,13 @@ int main(void)
         for(index=0; index < 32; index++)
           response[index] = '0';
         
-        int wan = receive[4] - 48;
-        int qian = receive[5] - 48;
-        int bai = receive[6] - 48;
-        int shi = receive[7] - 48;
-        int ge = receive[8] - 48;
         
-        int version = wan * 10000 + qian * 1000 + bai * 100 + shi * 10 + ge;
+        int qian = receive[6] - 48;
+        int bai = receive[7] - 48;
+        int shi = receive[8] - 48;
+        int ge = receive[9] - 48;
+        
+        int version = qian * 1000 + bai * 100 + shi * 10 + ge;
         if(version == last_version){
           NRF24L01_TxPacket(SSI1_BASE,response);
           delay_ms(8);
@@ -129,6 +129,13 @@ int main(void)
           last_version = version;
           NRF24L01_TxPacket(SSI1_BASE,response);
           delay_ms(8);
+          
+          int arg_of_cmd = 0;
+          int shi_of_arg = receive[4] - 48;
+          int ge_of_arg = receive[5] - 48;
+          
+          arg_of_cmd = shi_of_arg * 10 + ge_of_arg;
+          
           if('0' == receive[2]){
             if(info_cmd == receive[3])
             {
@@ -197,25 +204,53 @@ int main(void)
             else if(run_cmd == receive[3])
             {
               forward();
+              if(arg_of_cmd > 0)
+              {
+                delay_ms(1000 * arg_of_cmd);
+                stop();
+              }
+                
             }
             else if(forward_cmd == receive[3])
             {
               forward();
+              if(arg_of_cmd > 0)
+              {
+                delay_ms(1000 * arg_of_cmd);
+                stop();
+              }
             }
             else if(backward_cmd == receive[3])
             {
               backward();
+              if(arg_of_cmd > 0)
+              {
+                delay_ms(1000 * arg_of_cmd);
+                stop();
+              }
             }
             else if(turnleft_cmd == receive[3])
             {
               turnLeft();
-              delay(150000);
+              if(arg_of_cmd > 0)
+              {
+                delay_ms(1000 * arg_of_cmd);
+              }
+              else{
+                delay(150000);
+              }
               forward();
             }
             else if(turnright_cmd == receive[3])
             {
               turnRight();
-              delay(150000);
+              if(arg_of_cmd > 0)
+              {
+                delay_ms(1000 * arg_of_cmd);
+              }
+              else{
+                delay(150000);
+              }
               forward();
               
             }
