@@ -63,7 +63,7 @@ $(function() {
 				time_for_tries = 0;
 				if(pos != -1){
 					max_try = data.slice(pos+1);
-					time_for_tries = parseInt(max_try) * 0.3;
+					time_for_tries = parseInt(max_try) * 0.6;
 					data = data.slice(0,pos);
 				}
 				$("#buttons-status").append(data);
@@ -115,7 +115,7 @@ $(function() {
 						pos = data.indexOf('-');
 					if(pos != -1){
 						max_try = data.slice(pos+1);
-						time_for_tries = parseInt(max_try) * 0.3;
+						time_for_tries = parseInt(max_try) * 0.6;
 						data = data.slice(0,pos);
 					}
 					if(data !== "true") {
@@ -146,7 +146,7 @@ $(function() {
 					time_for_tries = 0;
 					if(pos != -1){
 						max_try = data.slice(pos+1);
-						time_for_tries = parseInt(max_try) * 0.3;
+						time_for_tries = parseInt(max_try) * 0.6;
 						data = data.slice(0,pos);
 					}
 					if(data !== "true") {

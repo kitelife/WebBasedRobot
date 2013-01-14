@@ -121,7 +121,7 @@ def send_cmd(encoded_cmd_list, cmd_type):
                                         bytesize=serial.EIGHTBITS,
                                         parity=serial.PARITY_NONE,
                                         stopbits=serial.STOPBITS_ONE,
-                                        timeout=0.3,
+                                        timeout=0.6,
                                         xonxoff=0,
                                         rtscts=0
                                         )

@@ -248,6 +248,6 @@ if __name__ == "__main__":
         print "请输入机器人的数目".decode('utf-8').encode('gbk')
     else:
         operate_serial.init_version_dict(int(sys.argv[1]))
-        print operate_serial.version_dict
+        #print operate_serial.version_dict
         application.listen(8888)
         tornado.ioloop.IOLoop.instance().start()
