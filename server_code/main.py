@@ -4,15 +4,22 @@ import re
 import time
 import random
 import sys
-
+import platform
 import tornado.ioloop
 import tornado.web
 
 import operate_serial
 
+def get_sys_encoding():
+    default_encoding = 'utf-8'
+    system_type = platform.system()
+    if system_type not in ['Linux', 'Darwin']:
+        default_encoding = 'gbk'
+    return default_encoding
+
 
 class basic_handler(tornado.web.RequestHandler):
-    
+
     session_id = None
 
     def convert_results(self, results):
@@ -46,7 +53,7 @@ class main_handler(basic_handler):
             self.set_secure_cookie("current_user", session_id)
             basic_handler.session_id = session_id
             self.render("index.html", robot_list = operate_serial.version_dict.keys())
-    
+
     def post(self):
         '''处理基本控制'''
         cmd = self.get_argument("command").strip().lower()
@@ -244,9 +251,8 @@ application = tornado.web.Application([
 if __name__ == "__main__":
 
     if len(sys.argv) < 2:
-        print "请输入机器人的数目".decode('utf-8').encode('gbk')
+        print "请输入机器人的数目".decode('utf-8').encode(get_sys_encoding())
     else:
         operate_serial.init_version_dict(int(sys.argv[1]))
-        #print operate_serial.version_dict
         application.listen(8888)
         tornado.ioloop.IOLoop.instance().start()
